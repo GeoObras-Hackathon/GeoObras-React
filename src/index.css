@@ -1,2 +1,14 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+	.card {
+		@apply bg-white rounded-2xl p-4 dark:bg-gray-800 dark:text-white
+	}
+}
+
+@layer utilities {
+  .main {
+    @apply w-full **:pointer-events-auto;
+  }
+}
