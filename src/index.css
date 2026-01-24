@@ -1,9 +1,19 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+	--color-bg-color: #fff;
+	--color-text-color: #1f2937;
+}
+
+.dark {
+	--color-bg-color: #1f2937;
+	--color-text-color: #fff;
+}
+
 @layer components {
 	.card {
-		@apply bg-white rounded-2xl p-4 dark:bg-gray-800 dark:text-white
+		@apply bg-bg-color text-text-color rounded-2xl p-4
 	}
 }
 
