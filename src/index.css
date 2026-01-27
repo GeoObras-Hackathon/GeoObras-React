@@ -2,35 +2,66 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	--color-bg-color: #fff;
-	--color-text-color: #1e1e1e;
-	--color-bg-fade-color: #f5f5f5;
+  --color-bg-color: #fff;
+  --color-text-color: #1e1e1e;
+  --color-bg-fade-color: #f5f5f5;
+  --color-bg-situacao: #0e6bc9;
+  --color-bg-risco: #0e6bc9;
 }
 
 .dark {
-	--color-bg-color: #1e1e1e;
-	--color-text-color: #fff;
-	--color-bg-fade-color: #252525;
+  --color-bg-color: #1e1e1e;
+  --color-text-color: #fff;
+  --color-bg-fade-color: #252525;
+}
+
+.concluida {
+  --color-bg-situacao: #3abc1a;
+}
+
+.em-execucao {
+  --color-bg-situacao: #dfd61b;
+}
+
+.inacabada {
+  --color-bg-situacao: #ea2a0d;
 }
 
 @layer base {
-	body {
-		@apply overflow-hidden;
+	html {
+		@apply text-[75%] sm:text-[100%];
 	}
+
+  body {
+    @apply overflow-hidden;
+  }
 }
 
 @layer components {
-	.card {
-		@apply bg-bg-color text-text-color rounded-2xl p-6 h-full min-w-70 w-1/2 max-w-90 shadow-md;
-	}
-	
-	.card-container {
-	  @apply h-1/2 md:h-full w-full **:pointer-events-auto;
+  .card {
+    @apply bg-bg-color text-text-color rounded-2xl p-6 h-full min-w-60 w-full lg:w-1/2 max-w-90 shadow-md;
+  }
+
+  .card-container {
+    @apply h-1/2 md:h-full w-full **:pointer-events-auto;
+  }
+
+	.card-flag {
+		@apply px-1 py-0.5 rounded text-[0.75rem] w-fit;
 	}
 }
 
 @layer utilities {
-	.button-opt {
-		@apply hover:scale-105 active:scale-75 transition-all ease-in duration-300 cursor-pointer hover:brightness-95 dark:hover:brightness-125;
-	}
+  .button-opt {
+    @apply hover:scale-105 active:scale-75 transition-all ease-in duration-300 cursor-pointer hover:brightness-95 dark:hover:brightness-125;
+  }
+
+	.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

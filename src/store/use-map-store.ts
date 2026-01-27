@@ -18,7 +18,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
     const map = get().map
     if (!map) return
 
-    map.flyTo([novaObra.latitude, novaObra.longitude], 12, {
+    map.flyTo([novaObra.geolocalizacao.latitude, novaObra.geolocalizacao.longitude], 18, {
       duration: 1.2,
     })
 

@@ -1,14 +1,15 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { useRef, useState } from 'react'
-import obrasDataJSON from '../../data/obras-data.json'
+import obrasDataJSON from '../../data/obras-rj.json'
 import type { obrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
+import { normalizarNome, normalizarSituacao } from '../../utils/normalizar-string'
 
 function Home () {
   const { obra, setObra, resetObra } = useMapStore()
   const [ampliado, setAmpliado] = useState(false)
   const navRef = useRef<HTMLDivElement | null>(null)
-  const obrasData:obrasDataType[] = obrasDataJSON.obrasData
+  const obrasData: obrasDataType[] = obrasDataJSON
 
   let lastScrollTop = 0
 
@@ -43,21 +44,21 @@ function Home () {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 size-full overflow-y-auto'
+            className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 h-full w-fit lg:w-full overflow-y-auto no-scrollbar pointer-events-none **:pointer-events-auto rounded-2xl bg-amber-300'
           >
             <div className='card flex flex-col h-fit md:max-h-full'>
-              <p>{obra.id}</p>
-              <p>{obra.nome}</p>
-              <p>{obra.situacao}</p>
-              <p>{obra.municipio}</p>
-              <p>{obra.valorTotal}</p>
-              <p>{obra.percentualExecucao}</p>
-              <p>{obra.indiceEficiencia}</p>
-              <p>{obra.classificacaoEficiencia}</p>
-              <p>{obra.latitude}</p>
-              <p>{obra.longitude}</p>
-              <p>{obra.dataInicio}</p>
-              <p>{obra.dataFimPrevista}</p>
+              <p>{obra.idUnico}</p>
+              <p>{obra.identificacao.nome}</p>
+              <p>{obra.identificacao.situacao}</p>
+              <p>{obra.identificacao.municipio}</p>
+              <p>{obra.financeiro.valor_total_contratado}</p>
+              <p>{obra.cronograma.percentual_fisico}</p>
+              <p>{obra.indices.eficiencia_cronograma}</p>
+              <p>{obra.indices.classificacao}</p>
+              <p>{obra.geolocalizacao.latitude}</p>
+              <p>{obra.geolocalizacao.longitude}</p>
+              <p>{obra.cronograma.data_inicio}</p>
+              <p>{obra.cronograma.data_fim_prevista}</p>
               <button
                 className='button-opt p-4 bg-amber-300'
                 onClick={() => {
@@ -88,9 +89,9 @@ function Home () {
             <nav
               ref={navRef}
               onScroll={handleScroll}
-              className='flex-1 overflow-y-auto p-4 pr-6 bg-bg-fade-color'
+              className='flex-1 overflow-y-auto no-scrollbar p-4 pr-6 bg-bg-fade-color'
             >
-              <ul className='flex flex-col gap-2'>
+              <ul className='flex flex-col gap-4'>
                 {obrasData.map((local, index) => (
                   <li key={index}>
                     <button
@@ -99,10 +100,23 @@ function Home () {
                       }}
                       className='flex flex-col gap-2 w-full px-4 py-2 shadow rounded-lg button-opt bg-bg-color'
                     >
-                      <span className='px-2 py-1 rounded-lg bg-lime-500 text-[0.75rem] w-fit'>
-                        {local.situacao}
-                      </span>
-                      <h2 className='text-justify'>{local.nome}</h2>
+                      <ul className='flex w-full overflow no-scrollbar-x-hidden gap-2'>
+                        <li
+                          className={`card-flag bg-bg-situacao ${normalizarSituacao(
+                            local.identificacao.situacao
+                          )}`}
+                        >
+                          {local.identificacao.situacao}
+                        </li>
+                        <li
+                          className={`card-flag ${
+                            local.indices.risco_gestao == 'Normal' ? 'bg-blue-300' : 'bg-red-400'
+                          }
+                        `}>
+                          {local.indices.risco_gestao}
+                        </li>
+                      </ul>
+                      <p className='text-left truncate'>{normalizarNome(local.identificacao.nome)}</p>
                     </button>
                   </li>
                 ))}

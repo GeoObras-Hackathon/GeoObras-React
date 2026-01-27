@@ -3,13 +3,13 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import { useThemeStore } from '../../store/use-theme-store'
-import obrasDataJSON from '../../data/obras-data.json'
+import obrasDataJSON from '../../data/obras-rj.json'
 import type { obrasDataType } from '../../types/obras-data-type'
 import { Icon } from 'leaflet'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
 
-const obrasData: obrasDataType[] = obrasDataJSON.obrasData
+const obrasData: obrasDataType[] = obrasDataJSON
 const markerIcon = new Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
@@ -38,7 +38,7 @@ function Markers () {
       {obrasData.map((obra, index) => (
         <Marker
           key={index}
-          position={[obra.latitude, obra.longitude]}
+          position={[obra.geolocalizacao.latitude, obra.geolocalizacao.longitude]}
           icon={markerIcon}
           eventHandlers={{
             click: () => setObra(obra)
