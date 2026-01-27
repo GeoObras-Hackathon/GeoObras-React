@@ -1,0 +1,18 @@
+{
+  "obrasData": [
+    {
+      "id": "12345",
+      "nome": "Construção de Escola Municipal",
+      "situacao": "Em Execução",
+      "municipio": "Rio de Janeiro",
+      "valorTotal": 5000000.0,
+      "percentualExecucao": 65.5,
+      "indiceEficiencia": 0.82,
+      "classificacaoEficiencia": "Moderada",
+      "latitude": -22.9068,
+      "longitude": -43.1729,
+      "dataInicio": "2023-01-15",
+      "dataFimPrevista": "2024-12-31"
+    }
+  ]
+}
