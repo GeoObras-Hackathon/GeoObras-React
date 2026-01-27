@@ -21,7 +21,7 @@
 
 @layer components {
 	.card {
-		@apply bg-bg-color text-text-color rounded-2xl p-6 h-full w-full max-w-100 shadow-md;
+		@apply bg-bg-color text-text-color rounded-2xl p-6 h-full min-w-70 w-1/2 max-w-90 shadow-md;
 	}
 	
 	.card-container {
