@@ -6,7 +6,6 @@
   --color-text-color: #1e1e1e;
   --color-bg-fade-color: #f5f5f5;
   --color-bg-situacao: #0e6bc9;
-  --color-bg-risco: #0e6bc9;
 }
 
 .dark {
@@ -28,9 +27,9 @@
 }
 
 @layer base {
-	html {
-		@apply text-[75%] sm:text-[100%];
-	}
+  html {
+    @apply text-[75%] sm:text-[100%];
+  }
 
   body {
     @apply overflow-hidden;
@@ -46,9 +45,17 @@
     @apply h-1/2 md:h-full w-full **:pointer-events-auto;
   }
 
-	.card-flag {
-		@apply px-1 py-0.5 rounded text-[0.75rem] w-fit;
-	}
+  .card-flag {
+    @apply px-1 py-0.5 rounded text-[0.75rem] w-fit;
+  }
+
+  .marker-situacao {
+    @apply w-4 h-4;
+  }
+
+  .marker-dot {
+    @apply block w-full h-full rounded-full bg-bg-situacao border-2 border-white shadow-[0_0_0_1px_rgba(0,0,0,0.25)];
+  }
 }
 
 @layer utilities {
@@ -56,7 +63,7 @@
     @apply hover:scale-105 active:scale-75 transition-all ease-in duration-300 cursor-pointer hover:brightness-95 dark:hover:brightness-125;
   }
 
-	.no-scrollbar {
+  .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }

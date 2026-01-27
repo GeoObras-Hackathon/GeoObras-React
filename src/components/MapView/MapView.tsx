@@ -5,19 +5,22 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import { useThemeStore } from '../../store/use-theme-store'
 import obrasDataJSON from '../../data/obras-rj.json'
 import type { obrasDataType } from '../../types/obras-data-type'
-import { Icon } from 'leaflet'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
+import { normalizarSituacao } from '../../utils/normalizar-string'
+import { DivIcon } from 'leaflet'
 
 const obrasData: obrasDataType[] = obrasDataJSON
-const markerIcon = new Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-})
+function createSituacaoMarker (situacao: string) {
+  const situacaoClass = normalizarSituacao(situacao)
+
+  return new DivIcon({
+    className: `marker-situacao ${situacaoClass}`,
+    html: `<span class="marker-dot"></span>`,
+    iconSize: [16, 16],
+    iconAnchor: [8, 8]
+  })
+}
 
 function MapRegister () {
   const map = useMap()
@@ -39,7 +42,7 @@ function Markers () {
         <Marker
           key={index}
           position={[obra.geolocalizacao.latitude, obra.geolocalizacao.longitude]}
-          icon={markerIcon}
+          icon={createSituacaoMarker(obra.identificacao.situacao)}
           eventHandlers={{
             click: () => setObra(obra)
           }}
