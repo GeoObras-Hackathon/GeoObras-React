@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 function Home () {
   type JSONType = {
@@ -510,8 +509,8 @@ function Home () {
     },
   ]
 
-  const navRef = useRef<HTMLDivElement | null>(null)
   const [ampliado, setAmpliado] = useState(false)
+  const navRef = useRef<HTMLDivElement | null>(null)
 
   let lastScrollTop = 0
 
@@ -536,7 +535,7 @@ function Home () {
     <main className={`card-container transition-[height] duration-300 ease-in-out ${ampliado ? 'h-3/4' : 'h-1/2'} md:h-full`}>
       <div className='card flex-1 flex flex-col'>
         <div className='flex flex-col gap-2 my-4'>
-          <h1 className='text-2xl'>Página Inicial</h1>
+          <h1 className='text-2xl font-bold'>Página Inicial</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur; adipisicing elit. Fuga;
             soluta.
@@ -545,20 +544,22 @@ function Home () {
         <nav
           ref={navRef}
           onScroll={handleScroll}
-          className='flex-1 overflow-y-scroll pr-4'
+          className='flex-1 overflow-y-scroll p-4 pr-6 bg-bg-fade-color'
         >
-          <ul className='flex flex-col gap-4 p-4'>
+          <ul className='flex flex-col gap-2'>
             {json.map((local, index) => (
               <li key={index}>
-                <Link
-                  to={local.id}
-                  className='flex flex-col md:flex-row md:items-center justify-between w-full p-4 shadow rounded-lg hover:scale-105 active:scale-75 transition-all ease-in duration-300 bg-bg-color'
+                <button
+                  onClick={() => console.log('d')}
+                  className='flex flex-col gap-2 w-full px-4 py-2 shadow rounded-lg button-opt bg-bg-color'
                 >
-                  {local.nome}
-                  <span className='p-2 rounded-lg bg-lime-500 text-sm'>
+                  <span className='px-2 py-1 rounded-lg bg-lime-500 text-[0.75rem] w-fit'>
                     {local.situacao}
                   </span>
-                </Link>
+                  <h2 className='text-justify'>
+                    {local.nome}
+                  </h2>
+                </button>
               </li>
             ))}
           </ul>

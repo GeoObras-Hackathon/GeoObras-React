@@ -8,7 +8,7 @@ function MapView () {
   const { theme } = useThemeStore()
 
   return (
-    <MapContainer center={[-22.0, -43.45]} zoom={8} scrollWheelZoom style={{height: '100%', width: '100%', zIndex: 1, position: 'fixed'}}>
+    <MapContainer center={[-22.0, -44.45]} zoom={8} scrollWheelZoom style={{height: '100%', width: '100%', zIndex: 1, position: 'fixed'}}>
       <TileLayer
         url={
           theme === 'light' ?
