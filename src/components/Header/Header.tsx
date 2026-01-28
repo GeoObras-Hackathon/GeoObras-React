@@ -12,7 +12,7 @@ function Header () {
         <img src={logo} alt='Logo GeoObras' className='size-12' />
         <p className='text-3xl hidden md:block font-black'>Geo Obras</p>
       </div>
-      <div className='flex gap-4 items-center'>
+      <div className='flex gap-4 pr-2 items-center'>
         <button onClick={() => {}}>
           <FaFilter />
         </button>
