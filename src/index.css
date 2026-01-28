@@ -50,7 +50,7 @@
   }
 
   .card-container {
-    @apply h-1/2 md:h-full w-full **:pointer-events-auto;
+    @apply h-1/2 md:h-full w-full **:pointer-events-auto mt-auto;
   }
 
   .card-flag {
@@ -68,7 +68,7 @@
 
 @layer utilities {
   .button-opt {
-    @apply hover:scale-105 active:scale-75 transition-all ease-in duration-300 cursor-pointer hover:brightness-95 dark:hover:brightness-125;
+    @apply hover:scale-105 active:scale-75 transition-all ease-in duration-300 cursor-pointer hover:brightness-95 dark:hover:brightness-125 text-text-color;
   }
 
   .no-scrollbar {
