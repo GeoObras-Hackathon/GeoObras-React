@@ -12,18 +12,18 @@ function App () {
 
   return (
     <div className={`h-lvh w-lvw relative flex ${theme}`}>
-      <div className='h-full bg-bg-color flex flex-col p-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto font'>
+      <div className='h-full  flex flex-col pb-3 pl-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto font'>
         <button
           onClick={() => {
             resetObra()
           }}
           className={
-            `button-opt bg-bg-fade-color shadow rounded-full size-8 flex justify-center items-center ${obra ? 'block' : 'hidden'}`
+            `button-opt bg-bg-fade-color shadow rounded-full size-10 flex justify-center items-center ${obra ? 'block' : 'hidden'}`
           }
         >
           <AiFillHome />
         </button>
-        <button className='button-opt bg-bg-fade-color shadow rounded-full size-8 flex justify-center items-center'>
+        <button className='button-opt bg-bg-fade-color shadow rounded-full size-10 flex justify-center items-center'>
           <IoMdHelp />
         </button>
       </div>
