@@ -1,4 +1,4 @@
-import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Marker, TileLayer, useMap, GeoJSON as DivGeoJSON } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
@@ -8,19 +8,10 @@ import type { obrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
 import { normalizarSituacao } from '../../utils/normalizar-string'
-import { DivIcon } from 'leaflet'
+import L, { DivIcon } from 'leaflet'
+import rjGeoJSON from '../../data/geojs-33-mun.json'
 
 const obrasData: obrasDataType[] = obrasDataJSON
-function createSituacaoMarker (situacao: string) {
-  const situacaoClass = normalizarSituacao(situacao)
-
-  return new DivIcon({
-    className: `marker-situacao ${situacaoClass}`,
-    html: `<span class="marker-dot"></span>`,
-    iconSize: [16, 16],
-    iconAnchor: [8, 8]
-  })
-}
 
 function MapRegister () {
   const map = useMap()
@@ -33,6 +24,17 @@ function MapRegister () {
   return null
 }
 
+function CustomIcon (situacao: string) {
+  const situacaoClass = normalizarSituacao(situacao)
+
+  return new DivIcon({
+    className: `marker-situacao ${situacaoClass}`,
+    html: `<span class="marker-dot"></span>`,
+    iconSize: [16, 16],
+    iconAnchor: [8, 8]
+  })
+}
+
 function Markers () {
   const { setObra } = useMapStore()
 
@@ -41,14 +43,45 @@ function Markers () {
       {obrasData.map((obra, index) => (
         <Marker
           key={index}
-          position={[obra.geolocalizacao.latitude, obra.geolocalizacao.longitude]}
-          icon={createSituacaoMarker(obra.identificacao.situacao)}
+          position={[
+            obra.geolocalizacao.latitude,
+            obra.geolocalizacao.longitude
+          ]}
+          icon={CustomIcon(obra.identificacao.situacao)}
           eventHandlers={{
             click: () => setObra(obra)
           }}
         />
       ))}
     </>
+  )
+}
+
+function MunicipiosRJLayer () {
+  const map = useMap()
+
+  return (
+    <DivGeoJSON
+      data={rjGeoJSON as GeoJSON.GeoJsonObject}
+      style={{
+        weight: 1,
+        color: '#64748b',
+        fillOpacity: 0.08
+      }}
+      onEachFeature={(_, layer) => {
+        layer.on('click', () => {
+          if (!(layer instanceof L.Polygon)) return
+
+          const bounds = layer.getBounds()
+          if (!bounds.isValid()) return
+
+          map.flyToBounds(bounds, {
+            maxZoom: 12,
+            duration: 0.8
+          })
+        })
+      }}
+    />
   )
 }
 
@@ -70,6 +103,8 @@ function MapView () {
         }
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>'
       />
+      <MunicipiosRJLayer />
+
       <Markers />
       <MapRegister />
     </MapContainer>

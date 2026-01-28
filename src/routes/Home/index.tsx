@@ -3,10 +3,13 @@ import { useRef, useState } from 'react'
 import obrasDataJSON from '../../data/obras-rj.json'
 import type { obrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
-import { normalizarNome, normalizarSituacao } from '../../utils/normalizar-string'
+import {
+  normalizarNome,
+  normalizarSituacao
+} from '../../utils/normalizar-string'
 
 function Home () {
-  const { obra, setObra, resetObra } = useMapStore()
+  const { obra, setObra } = useMapStore()
   const [ampliado, setAmpliado] = useState(false)
   const navRef = useRef<HTMLDivElement | null>(null)
   const obrasData: obrasDataType[] = obrasDataJSON
@@ -44,31 +47,33 @@ function Home () {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 h-full w-fit lg:w-full overflow-y-auto no-scrollbar pointer-events-none **:pointer-events-auto rounded-2xl'
+            className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 h-full w-fit lg:w-full overflow-y-auto no-scrollbar pointer-events-none **:pointer-events-auto rounded-2xl relative'
           >
-            <div className='card flex flex-col h-fit md:max-h-full'>
-              <p>{obra.idUnico}</p>
-              <p>{obra.identificacao.nome}</p>
+            <div className='card flex flex-col h-fit md:max-h-full md:overflow-y-auto no-scrollbar'>
+              <h2 className='text-2xl font-bold'>{normalizarNome(obra.identificacao.nome)}</h2>
               <p>{obra.identificacao.situacao}</p>
               <p>{obra.identificacao.municipio}</p>
-              <p>{obra.financeiro.valor_total_contratado}</p>
-              <p>{obra.cronograma.percentual_fisico}</p>
-              <p>{obra.indices.eficiencia_cronograma}</p>
-              <p>{obra.indices.classificacao}</p>
-              <p>{obra.geolocalizacao.latitude}</p>
-              <p>{obra.geolocalizacao.longitude}</p>
+              
               <p>{obra.cronograma.data_inicio}</p>
               <p>{obra.cronograma.data_fim_prevista}</p>
-              <button
-                className='button-opt p-4 bg-amber-300'
-                onClick={() => {
-                  resetObra()
-                }}
-              >
-                home
-              </button>
+              <p>{obra.cronograma.data_fim_real}</p>
+              <p>{obra.cronograma.percentual_fisico}</p>
+
+              <p>{obra.social.empregos_gerados}</p>
+              <p>{obra.social.populacao_beneficiada}</p>
             </div>
-            <div className='card flex flex-col h-fit md:max-h-full'>fff</div>
+            <div className='card flex flex-col h-fit md:max-h-full'>
+              <p>{obra.financeiro.valor_total_contratado}</p>
+              <p>{obra.financeiro.valor_pago_acumulado}</p>
+              <p>{obra.financeiro.valor_previsto_original}</p>
+              <p>{obra.financeiro.percentual_desembolso}</p>
+              <p>{obra.financeiro.gap_financeiro_fisico}</p>
+              <p>{obra.financeiro.tem_contrato}</p>
+              
+              <p>{obra.indices.eficiencia_cronograma}</p>
+              <p>{obra.indices.classificacao}</p>
+              <p>{obra.indices.risco_gestao}</p>
+            </div>
           </motion.div>
         ) : (
           <motion.div
@@ -110,13 +115,18 @@ function Home () {
                         </li>
                         <li
                           className={`card-flag ${
-                            local.indices.risco_gestao == 'Normal' ? 'bg-blue-300' : 'bg-red-400'
+                            local.indices.risco_gestao == 'Normal'
+                              ? 'bg-blue-300'
+                              : 'bg-red-400'
                           }
-                        `}>
+                        `}
+                        >
                           {local.indices.risco_gestao}
                         </li>
                       </ul>
-                      <p className='text-left truncate'>{normalizarNome(local.identificacao.nome)}</p>
+                      <p className='text-left truncate'>
+                        {normalizarNome(local.identificacao.nome)}
+                      </p>
                     </button>
                   </li>
                 ))}
