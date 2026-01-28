@@ -7,7 +7,7 @@ import obrasDataJSON from '../../data/obras-rj.json'
 import type { obrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
-import { normalizarSituacao } from '../../utils/normalizar-string'
+import { normalizarClassificacao } from '../../utils/normalizar-string'
 import L, { DivIcon } from 'leaflet'
 import rjGeoJSON from '../../data/geojs-33-mun.json'
 
@@ -24,11 +24,11 @@ function MapRegister () {
   return null
 }
 
-function CustomIcon (situacao: string) {
-  const situacaoClass = normalizarSituacao(situacao)
+function CustomIcon (classificacao: string) {
+  const classificacaoClass = normalizarClassificacao(classificacao)
 
   return new DivIcon({
-    className: `marker-situacao ${situacaoClass}`,
+    className: `marker-classificacao ${classificacaoClass}`,
     html: `<span class="marker-dot"></span>`,
     iconSize: [16, 16],
     iconAnchor: [8, 8]
@@ -47,7 +47,7 @@ function Markers () {
             obra.geolocalizacao.latitude,
             obra.geolocalizacao.longitude
           ]}
-          icon={CustomIcon(obra.identificacao.situacao)}
+          icon={CustomIcon(obra.indices.classificacao)}
           eventHandlers={{
             click: () => setObra(obra)
           }}

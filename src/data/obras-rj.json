@@ -1,58 +1,19 @@
 [
   {
-    "idUnico": "69358.33-04",
-    "identificacao": {
-      "nome": "EM João Brazil - Reforma - Niterói/RJ",
-      "situacao": "Concluída",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 0,
-      "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
-      "tem_contrato": false
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2011-02-17",
-      "data_fim_prevista": "2011-07-27",
-      "data_fim_real": "2012-05-25",
-      "percentual_fisico": 100.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:56:40.384272",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -22.90642,
-      "longitude": -43.18223
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.35,
-      "classificacao": "Crítica",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "62251.33-88",
     "identificacao": {
       "nome": "IMPLANTAÇÃO DE ACADEMIA DA SAÚDE",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Lote 1, Quadra G",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 138000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -66,7 +27,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:56:41.963882",
+      "data_coleta": "2026-01-28T10:37:31.497254",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -84,15 +45,16 @@
     "identificacao": {
       "nome": "Fiscalização da Obra de Recuperação do Telhado do Rancho das Praças do CIAA",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Brasil, 10946 - Penha, Rio de Janeiro-RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 46536.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -106,7 +68,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:56:43.376597",
+      "data_coleta": "2026-01-28T10:37:32.922647",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -124,15 +86,16 @@
     "identificacao": {
       "nome": "CONSTRUÇÃO DE MUROS",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "MUNICIPIO DE LAJE DO MURIAE",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 853450.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -146,7 +109,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:56:55.231202",
+      "data_coleta": "2026-01-28T10:37:34.302204",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -160,57 +123,18 @@
     }
   },
   {
-    "idUnico": "50382.33-46",
-    "identificacao": {
-      "nome": "Construção de piquetes de equoterapia no campus Avançado Cambuci do IFFluminense.",
-      "situacao": "Cadastrada",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 217157.41,
-      "valor_pago_acumulado": 217157.41,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 100.0,
-      "gap_financeiro_fisico": 100.0,
-      "tem_contrato": true
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2025-01-20",
-      "data_fim_prevista": "2026-07-20",
-      "data_fim_real": "Informação Pendente",
-      "percentual_fisico": 0.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:56:56.641587",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -21.5880532897962,
-      "longitude": -41.9589829891809
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.0,
-      "classificacao": "Crítica",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "24770.33-15",
     "identificacao": {
       "nome": "Manutenção Corretiva Ar Condicionado",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Rua General José Cristino, 77 - São Cristóvão - Rio de Janeiro / RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 34100.0,
       "valor_pago_acumulado": 61400.0,
-      "valor_previsto_original": 0,
+      "valor_previsto_original": 27300.0,
       "percentual_desembolso": 180.06,
       "gap_financeiro_fisico": 180.06,
       "tem_contrato": true
@@ -226,7 +150,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:56:58.057001",
+      "data_coleta": "2026-01-28T10:38:00.819761",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -244,15 +168,16 @@
     "identificacao": {
       "nome": "Fiscalização da Obra de Reforma da Cozinha do Rancho das Praças do CIAA",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Brasil, 10946 - Penha, Rio de Janeiro - RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 44892.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -266,7 +191,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:56:59.572183",
+      "data_coleta": "2026-01-28T10:38:02.361585",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -284,15 +209,16 @@
     "identificacao": {
       "nome": "CONSTRUÇÃO DE UNIDADE BÁSICA DE SAÚDE",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "ESTRADA ILDA ALVES PINHEIRO s/nº",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 856000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -306,7 +232,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:11.206969",
+      "data_coleta": "2026-01-28T10:38:03.781228",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -324,13 +250,14 @@
     "identificacao": {
       "nome": "ADEQUAÇÃO CIVIL PARA NOVAS CATRACAS NA ETE/CTV",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "AVENIDA BRASIL, 4365 - MANGUINHOS - CTV",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 120000.0,
       "valor_pago_acumulado": 120000.0,
-      "valor_previsto_original": 0,
+      "valor_previsto_original": 150000.0,
       "percentual_desembolso": 100.0,
       "gap_financeiro_fisico": 100.0,
       "tem_contrato": true
@@ -346,7 +273,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:12.618025",
+      "data_coleta": "2026-01-28T10:38:05.181561",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -360,19 +287,61 @@
     }
   },
   {
+    "idUnico": "50382.33-46",
+    "identificacao": {
+      "nome": "Construção de piquetes de equoterapia no campus Avançado Cambuci do IFFluminense.",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "Estrada Cambuci-Três Irmãos, Km 05, Zona Rural – Cambuci/RJ",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 217157.41,
+      "valor_pago_acumulado": 217157.41,
+      "valor_previsto_original": 275196.76,
+      "percentual_desembolso": 100.0,
+      "gap_financeiro_fisico": 100.0,
+      "tem_contrato": true
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2025-01-20",
+      "data_fim_prevista": "2026-07-20",
+      "data_fim_real": "Informação Pendente",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:38:16.574446",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -21.5880532897962,
+      "longitude": -41.9589829891809
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
     "idUnico": "60204.33-62",
     "identificacao": {
       "nome": "Obra de Acessibilidade",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Estrada Dona Castorina, 110 - Jardim Botânico, Rio de Janeiro/RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 5213754.87,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -386,7 +355,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:14.021921",
+      "data_coleta": "2026-01-28T10:38:17.956983",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -404,13 +373,14 @@
     "identificacao": {
       "nome": "Reforma CIEP Willy Brandt",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO DE JANEIRO",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 3905127.2,
       "valor_pago_acumulado": 54196600.4,
-      "valor_previsto_original": 0,
+      "valor_previsto_original": 5900000.0,
       "percentual_desembolso": 1387.83,
       "gap_financeiro_fisico": 1387.83,
       "tem_contrato": true
@@ -426,7 +396,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:15.438156",
+      "data_coleta": "2026-01-28T10:38:19.345328",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -444,15 +414,16 @@
     "identificacao": {
       "nome": "ADEQUAÇÃO DA REDE DE NO BREAK DO CHP PARA ATENDIMENTO A CARGAS CRÍTICAS",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "AVENIDA BRASIL, 4365 - MANGUINHOS - CTV",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 672000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -466,7 +437,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:26.846666",
+      "data_coleta": "2026-01-28T10:38:20.721421",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -484,15 +455,16 @@
     "identificacao": {
       "nome": "Reforma Buenos Aires 256",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Rua Buenos Aires 256",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 1500000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -506,7 +478,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:28.268354",
+      "data_coleta": "2026-01-28T10:38:32.148836",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -524,15 +496,16 @@
     "identificacao": {
       "nome": "Reforma Subestação de energia",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO DE JANEIRO",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 400000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -546,7 +519,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:29.647292",
+      "data_coleta": "2026-01-28T10:38:33.561264",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -564,15 +537,16 @@
     "identificacao": {
       "nome": "IMPLANTAÇÃO DE ACADEMIA DA SAÚDE",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "RUA FERNANDES DE QUEIROS",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 90000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -586,7 +560,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:31.066364",
+      "data_coleta": "2026-01-28T10:38:35.102941",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -604,15 +578,16 @@
     "identificacao": {
       "nome": "Reforma das instalações do Prédio da CISCEA",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "COMANDO DA AERONÁUTICA",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 5928917.22,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -626,7 +601,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:42.495187",
+      "data_coleta": "2026-01-28T10:38:36.517299",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -644,15 +619,16 @@
     "identificacao": {
       "nome": "REFORMA DE UNIDADE BÁSICA DE SAÚDE",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "RUA EUCLIDES DA CUNHA",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 866400.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -666,7 +642,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:43.945095",
+      "data_coleta": "2026-01-28T10:38:48.012305",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -680,59 +656,20 @@
     }
   },
   {
-    "idUnico": "42067.33-47",
-    "identificacao": {
-      "nome": "CR 823364/2015 - REVITALIZAÇÃO DO THEATRO D. PEDRO",
-      "situacao": "Em execução",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 0,
-      "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
-      "tem_contrato": false
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2015-12-16",
-      "data_fim_prevista": "2025-12-30",
-      "data_fim_real": "2024-09-14",
-      "percentual_fisico": 69.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:57:45.364530",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -22.5092900154403,
-      "longitude": -43.175
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.68,
-      "classificacao": "Baixa",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "21209.33-53",
     "identificacao": {
       "nome": "Reforma do Telhado e construção rampa no Campus Paulo de Frontin do IFRJ",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO DE JANEIRO",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 1600000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -746,7 +683,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:46.793539",
+      "data_coleta": "2026-01-28T10:38:49.393324",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -760,19 +697,61 @@
     }
   },
   {
-    "idUnico": "21215.33-05",
+    "idUnico": "21217.33-08",
     "identificacao": {
-      "nome": "Reforma Telhado do Campus Rio de Janeiro",
+      "nome": "Substituição dos elevadores do imóvel",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO DE JANEIRO",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 2000000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
+      "tem_contrato": false
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2023-10-02",
+      "data_fim_prevista": "2024-04-05",
+      "data_fim_real": "Informação Pendente",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:38:50.771751",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -22.9047600160657,
+      "longitude": -43.18431
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
+    "idUnico": "21215.33-05",
+    "identificacao": {
+      "nome": "Reforma Telhado do Campus Rio de Janeiro",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO DE JANEIRO",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 0,
+      "valor_pago_acumulado": 0,
+      "valor_previsto_original": 450000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -786,7 +765,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:58.210218",
+      "data_coleta": "2026-01-28T10:38:52.172298",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -804,15 +783,16 @@
     "identificacao": {
       "nome": "Cabeamento estruturado unidades Maracanã e Maria da Graça",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Maracanã, 229 - Maracanã, Rio de Janeiro – RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 2995281.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -826,7 +806,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:57:59.629739",
+      "data_coleta": "2026-01-28T10:39:03.581731",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -840,59 +820,20 @@
     }
   },
   {
-    "idUnico": "21217.33-08",
-    "identificacao": {
-      "nome": "Substituição dos elevadores do imóvel",
-      "situacao": "Cadastrada",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 0,
-      "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
-      "tem_contrato": false
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2023-10-02",
-      "data_fim_prevista": "2024-04-05",
-      "data_fim_real": "Informação Pendente",
-      "percentual_fisico": 0.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:58:01.024552",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -22.9047600160657,
-      "longitude": -43.18431
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.0,
-      "classificacao": "Crítica",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "4131.33-37",
     "identificacao": {
       "nome": "Reconstrução da Divisao de Odontologia do CIAA",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Brasil, 10946 - Penha, Rio de Janeiro - RJ, 21012-350",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 684915.5,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -906,7 +847,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:02.610064",
+      "data_coleta": "2026-01-28T10:39:05.107081",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -920,59 +861,20 @@
     }
   },
   {
-    "idUnico": "46711.33-36",
-    "identificacao": {
-      "nome": "Reforma e ampliação de espaços, Aditivo qualitativo e quantitativo",
-      "situacao": "Cadastrada",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 1408188.39,
-      "valor_pago_acumulado": 0.0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0.0,
-      "gap_financeiro_fisico": 0.0,
-      "tem_contrato": true
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2024-12-09",
-      "data_fim_prevista": "2025-05-09",
-      "data_fim_real": "Informação Pendente",
-      "percentual_fisico": 0.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:58:14.038822",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -22.9539900161441,
-      "longitude": -43.17147
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.0,
-      "classificacao": "Crítica",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "21253.33-41",
     "identificacao": {
       "nome": "Estação de Tratamento de Esgoto (ETE) no Campus Cambuci",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Estrada Cambuci-Três Irmãos, Km 05, Zona Rural – Cambuci/RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 250000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -986,7 +888,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:15.430887",
+      "data_coleta": "2026-01-28T10:39:06.478094",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1000,59 +902,20 @@
     }
   },
   {
-    "idUnico": "21258.33-13",
-    "identificacao": {
-      "nome": "Adequação do piso externo com instalação de rota acessível no Campus Cabo Frio",
-      "situacao": "Cadastrada",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 0,
-      "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
-      "tem_contrato": false
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2024-02-05",
-      "data_fim_prevista": "2024-08-30",
-      "data_fim_real": "Informação Pendente",
-      "percentual_fisico": 0.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:58:16.817263",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -22.8151400159233,
-      "longitude": -41.98099
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.0,
-      "classificacao": "Crítica",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "21254.33-08",
     "identificacao": {
       "nome": "Instalação de sistema de combate a incêndio dos campi Bom Jesus do Itabapoana e Itaboraí",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Avenida Dario Vieira Borges, 235 - Parque do Trevo - Bom Jesus do Itabapoana - RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 1300000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1066,7 +929,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:18.226251",
+      "data_coleta": "2026-01-28T10:39:07.853479",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1084,15 +947,16 @@
     "identificacao": {
       "nome": "Construção de fazenda solar fotovoltáica para atendimento a todo o Instituto Federal Fluminense",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "BR 356 - KM 181 - Perigoso - São João da Barra/RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 2000000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1106,7 +970,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:29.669877",
+      "data_coleta": "2026-01-28T10:39:19.261812",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1124,15 +988,16 @@
     "identificacao": {
       "nome": "Adequação do piso externo com instalação de rota acessível no Campus Santo Antônio de Pádua",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. João Jazbick - Aeroporto - Santo Antônio de Pádua, RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 362000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1146,7 +1011,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:31.075250",
+      "data_coleta": "2026-01-28T10:39:20.671058",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1160,19 +1025,61 @@
     }
   },
   {
-    "idUnico": "30706.33-66",
+    "idUnico": "21258.33-13",
     "identificacao": {
-      "nome": "INTERVENÇÕES DE QUALIFICAÇÃO VIÁRIA NO PERÍMETRO URBANO DO MUNICÍPIO",
+      "nome": "Adequação do piso externo com instalação de rota acessível no Campus Cabo Frio",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Estrada Cabo-Frio-Búzios,  s/nº - Baía Formosa - Cabo Frio - RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 443000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
+      "tem_contrato": false
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2024-02-05",
+      "data_fim_prevista": "2024-08-30",
+      "data_fim_real": "Informação Pendente",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:39:22.062985",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -22.8151400159233,
+      "longitude": -41.98099
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
+    "idUnico": "30706.33-66",
+    "identificacao": {
+      "nome": "INTERVENÇÕES DE QUALIFICAÇÃO VIÁRIA NO PERÍMETRO URBANO DO MUNICÍPIO",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "MUNICIPIO DE TANGUA",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 0,
+      "valor_pago_acumulado": 0,
+      "valor_previsto_original": 1450000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1186,7 +1093,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:32.458718",
+      "data_coleta": "2026-01-28T10:39:23.474760",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1204,15 +1111,16 @@
     "identificacao": {
       "nome": "Conclusão do ginásio e adaptação interna do prédio de laboratórios no Campus Itaboraí",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Rua Isaura Pantoja, S/N°",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 3500000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1226,7 +1134,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:33.868004",
+      "data_coleta": "2026-01-28T10:39:34.888910",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1240,59 +1148,20 @@
     }
   },
   {
-    "idUnico": "20289.33-82",
-    "identificacao": {
-      "nome": "Reforma do Parque",
-      "situacao": "Inacabada",
-      "municipio": "RJ",
-      "is_bim": false
-    },
-    "financeiro": {
-      "valor_total_contratado": 0,
-      "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
-      "tem_contrato": false
-    },
-    "social": {
-      "populacao_beneficiada": 0,
-      "empregos_gerados": 0
-    },
-    "cronograma": {
-      "data_inicio": "2018-10-18",
-      "data_fim_prevista": "2023-02-28",
-      "data_fim_real": "2023-07-19",
-      "percentual_fisico": 0.0
-    },
-    "metadados": {
-      "data_coleta": "2026-01-27T15:58:45.448280",
-      "fonte": "ObrasGov.br"
-    },
-    "geolocalizacao": {
-      "latitude": -22.10031,
-      "longitude": -41.47542
-    },
-    "indices": {
-      "eficiencia_cronograma": 0.0,
-      "classificacao": "Crítica",
-      "risco_gestao": "Normal"
-    }
-  },
-  {
     "idUnico": "21261.33-06",
     "identificacao": {
       "nome": "Construção de telhados didáticos para Laboratório de placas fotovoltaicas no Campus Campos Centro",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Rua Dr. Siqueira, 273 - Parque Dom Bosco,  Campos dos Goytacazes, RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 200000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1306,7 +1175,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:46.856848",
+      "data_coleta": "2026-01-28T10:39:36.263868",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1324,15 +1193,16 @@
     "identificacao": {
       "nome": "Adequação do Laboratório de Simulação Realística no Campus Campos Guarus",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Souza Mota, 350 - Parque Fundão   Campos dos Goytacazes - RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 300000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1346,7 +1216,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:48.274885",
+      "data_coleta": "2026-01-28T10:39:37.654837",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1360,17 +1230,59 @@
     }
   },
   {
+    "idUnico": "46711.33-36",
+    "identificacao": {
+      "nome": "Reforma e ampliação de espaços, Aditivo qualitativo e quantitativo",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "Avenida Pasteur 350/368 Urca RJ",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 1408188.39,
+      "valor_pago_acumulado": 0.0,
+      "valor_previsto_original": 469396.13,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
+      "tem_contrato": true
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2024-12-09",
+      "data_fim_prevista": "2025-05-09",
+      "data_fim_real": "Informação Pendente",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:39:39.038538",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -22.9539900161441,
+      "longitude": -43.17147
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
     "idUnico": "21279.33-04",
     "identificacao": {
       "nome": "Contratação de empresa especializada para execução de serviços de engenharia na Delegacia de Polícia Federal em Campos dos Goytacazes/RJ",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "DEPARTAMENTO DE POLICIA FEDERAL",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 150578.58,
       "valor_pago_acumulado": 301157.16,
-      "valor_previsto_original": 0,
+      "valor_previsto_original": 150576.06,
       "percentual_desembolso": 200.0,
       "gap_financeiro_fisico": 200.0,
       "tem_contrato": true
@@ -1386,7 +1298,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:58:50.880818",
+      "data_coleta": "2026-01-28T10:39:50.447111",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1404,15 +1316,16 @@
     "identificacao": {
       "nome": "Provisão de 25 unidades habitacionais no Município de Sapucaia/RJ",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Prefeitura Municipal de Sapucaia",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 4526673.06,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1426,7 +1339,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:59:02.718836",
+      "data_coleta": "2026-01-28T10:39:51.829226",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1444,15 +1357,16 @@
     "identificacao": {
       "nome": "PAVIMENTAÇÃO EM VIAS DO MUNICÍPIO",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "MUNICIPIO DE DUAS BARRAS",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 340123.97,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1466,7 +1380,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:59:04.491310",
+      "data_coleta": "2026-01-28T10:39:53.213204",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1484,15 +1398,16 @@
     "identificacao": {
       "nome": "Projeto de Reforma e Restauração do prédio histório do Campus Centro do Colégio Pedro II.",
       "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Marechal Floriano, 80 Centro - Rio de Janeiro/RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 4269773.71,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1506,7 +1421,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:59:05.907175",
+      "data_coleta": "2026-01-28T10:39:54.603280",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1520,19 +1435,61 @@
     }
   },
   {
-    "idUnico": "21331.33-82",
+    "idUnico": "20289.33-82",
     "identificacao": {
-      "nome": "Restauração da Basílica de São Sebastião (Capuchinhos), da Igreja de São Pedro Apóstolo (Encantado) e Igreja de São Sebastião da Lagoa (Botafogo)",
-      "situacao": "Cadastrada",
-      "municipio": "RJ",
+      "nome": "Reforma do Parque",
+      "situacao": "Inacabada",
+      "municipio_endereco": "MUNICIPIO DE QUISSAMA",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 540139.83,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
+      "tem_contrato": false
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2018-10-18",
+      "data_fim_prevista": "2023-02-28",
+      "data_fim_real": "2023-07-19",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:40:06.242334",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -22.10031,
+      "longitude": -41.47542
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
+    "idUnico": "21331.33-82",
+    "identificacao": {
+      "nome": "Restauração da Basílica de São Sebastião (Capuchinhos), da Igreja de São Pedro Apóstolo (Encantado) e Igreja de São Sebastião da Lagoa (Botafogo)",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "ASSOCIACAO CULTURAL DA ARQUIDIOCESE DO RIO DE JANEIRO",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 0,
+      "valor_pago_acumulado": 0,
+      "valor_previsto_original": 1200000.0,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1546,7 +1503,7 @@
       "percentual_fisico": 0.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:59:07.329950",
+      "data_coleta": "2026-01-28T10:40:07.945516",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1564,15 +1521,16 @@
     "identificacao": {
       "nome": "Projeto de Reforma do Prédio 13 (Alojamento Feminino do C-ESP-HabSG)",
       "situacao": "Concluída",
-      "municipio": "RJ",
+      "municipio_endereco": "Av. Brasil, 10946 - Penha, Rio de Janeiro - RJ",
+      "uf": "RJ",
       "is_bim": false
     },
     "financeiro": {
       "valor_total_contratado": 0,
       "valor_pago_acumulado": 0,
-      "valor_previsto_original": 0,
-      "percentual_desembolso": 0,
-      "gap_financeiro_fisico": 0,
+      "valor_previsto_original": 57094.56,
+      "percentual_desembolso": 0.0,
+      "gap_financeiro_fisico": 0.0,
       "tem_contrato": false
     },
     "social": {
@@ -1586,7 +1544,7 @@
       "percentual_fisico": 100.0
     },
     "metadados": {
-      "data_coleta": "2026-01-27T15:59:18.800067",
+      "data_coleta": "2026-01-28T10:40:09.372683",
       "fonte": "ObrasGov.br"
     },
     "geolocalizacao": {
@@ -1596,6 +1554,88 @@
     "indices": {
       "eficiencia_cronograma": 1.5,
       "classificacao": "Excelente",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
+    "idUnico": "21343.33-52",
+    "identificacao": {
+      "nome": "Rampa de Acessibilidade do Campus Niterói",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "R. Assis Vasconcelos S/N - Barreto",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 455755.02,
+      "valor_pago_acumulado": 455755.02,
+      "valor_previsto_original": 503716.76,
+      "percentual_desembolso": 100.0,
+      "gap_financeiro_fisico": 100.0,
+      "tem_contrato": true
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2023-11-06",
+      "data_fim_prevista": "2024-07-06",
+      "data_fim_real": "Informação Pendente",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:40:10.746165",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -22.869130016009,
+      "longitude": -43.1035
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
+      "risco_gestao": "Normal"
+    }
+  },
+  {
+    "idUnico": "21348.33-24",
+    "identificacao": {
+      "nome": "Obras de reforma da área de serviço, do pátio descoberto e ampliação do CREIR com a construção de 02 salas.",
+      "situacao": "Cadastrada",
+      "municipio_endereco": "COLEGIO PEDRO II",
+      "uf": "RJ",
+      "is_bim": false
+    },
+    "financeiro": {
+      "valor_total_contratado": 444888.88,
+      "valor_pago_acumulado": 444888.88,
+      "valor_previsto_original": 500000.0,
+      "percentual_desembolso": 100.0,
+      "gap_financeiro_fisico": 100.0,
+      "tem_contrato": true
+    },
+    "social": {
+      "populacao_beneficiada": 0,
+      "empregos_gerados": 0
+    },
+    "cronograma": {
+      "data_inicio": "2023-10-10",
+      "data_fim_prevista": "2024-06-06",
+      "data_fim_real": "Informação Pendente",
+      "percentual_fisico": 0.0
+    },
+    "metadados": {
+      "data_coleta": "2026-01-28T10:40:22.147182",
+      "fonte": "ObrasGov.br"
+    },
+    "geolocalizacao": {
+      "latitude": -22.87732029161156,
+      "longitude": -43.43090185560842
+    },
+    "indices": {
+      "eficiencia_cronograma": 0.0,
+      "classificacao": "Crítica",
       "risco_gestao": "Normal"
     }
   }

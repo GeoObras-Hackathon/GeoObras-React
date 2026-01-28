@@ -5,8 +5,9 @@ import type { obrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import {
   normalizarNome,
-  normalizarSituacao
+  normalizarClassificacao
 } from '../../utils/normalizar-string'
+import { CgLoadbarSound } from 'react-icons/cg'
 
 function Home () {
   const { obra, setObra } = useMapStore()
@@ -50,29 +51,31 @@ function Home () {
             className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 h-full w-fit lg:w-full overflow-y-auto no-scrollbar pointer-events-none **:pointer-events-auto rounded-2xl relative'
           >
             <div className='card flex flex-col h-fit md:max-h-full md:overflow-y-auto no-scrollbar'>
-              <h2 className='text-2xl font-bold'>{normalizarNome(obra.identificacao.nome)}</h2>
-              <p>{obra.identificacao.situacao}</p>
-              <p>{obra.identificacao.municipio}</p>
-              
-              <p>{obra.cronograma.data_inicio}</p>
-              <p>{obra.cronograma.data_fim_prevista}</p>
-              <p>{obra.cronograma.data_fim_real}</p>
-              <p>{obra.cronograma.percentual_fisico}</p>
+              <h2 className='text-2xl font-bold'>
+                {normalizarNome(obra.identificacao.nome)}
+              </h2>
+              <p>Situação da obra: {obra.identificacao.situacao}</p>
+              <p>Endereço: {obra.identificacao.municipio_endereco}</p>
 
-              <p>{obra.social.empregos_gerados}</p>
-              <p>{obra.social.populacao_beneficiada}</p>
+              <p>Inicio da obra: {obra.cronograma.data_inicio}</p>
+              <p>Conclusão prevista: {obra.cronograma.data_fim_prevista}</p>
+              <p>Conclusão real: {obra.cronograma.data_fim_real}</p>
+              <p>Percentual de construção: {obra.cronograma.percentual_fisico}</p>
+
+              <p>Empregos gerados: {obra.social.empregos_gerados}</p>
+              <p>População beneficiada: {obra.social.populacao_beneficiada}</p>
             </div>
             <div className='card flex flex-col h-fit md:max-h-full'>
-              <p>{obra.financeiro.valor_total_contratado}</p>
-              <p>{obra.financeiro.valor_pago_acumulado}</p>
-              <p>{obra.financeiro.valor_previsto_original}</p>
-              <p>{obra.financeiro.percentual_desembolso}</p>
-              <p>{obra.financeiro.gap_financeiro_fisico}</p>
-              <p>{obra.financeiro.tem_contrato}</p>
-              
-              <p>{obra.indices.eficiencia_cronograma}</p>
-              <p>{obra.indices.classificacao}</p>
-              <p>{obra.indices.risco_gestao}</p>
+              <p>Valor total contratado: {obra.financeiro.valor_total_contratado}</p>
+              <p>Valor pago acumulado: {obra.financeiro.valor_pago_acumulado}</p>
+              <p>Valor previsto original: {obra.financeiro.valor_previsto_original}</p>
+              <p>Percentual de desembolso: {obra.financeiro.percentual_desembolso}</p>
+              <p>Gap financeiro de construção: {obra.financeiro.gap_financeiro_fisico}</p>
+              <p>Situação de contrato: {obra.financeiro.tem_contrato}</p>
+
+              <p>Indice de eficiência: {obra.indices.eficiencia_cronograma}</p>
+              <p>Classificação: {obra.indices.classificacao}</p>
+              <p>Risco de gestão: {obra.indices.risco_gestao}</p>
             </div>
           </motion.div>
         ) : (
@@ -107,21 +110,15 @@ function Home () {
                     >
                       <ul className='flex w-full overflow no-scrollbar-x-hidden gap-2'>
                         <li
-                          className={`card-flag bg-bg-situacao ${normalizarSituacao(
-                            local.identificacao.situacao
+                          className={`card-flag bg-bg-classificacao flex items-center text-white ${normalizarClassificacao(
+                            local.indices.classificacao
                           )}`}
                         >
-                          {local.identificacao.situacao}
+                          <CgLoadbarSound className='text-lg'/>
+                          {local.indices.classificacao}
                         </li>
-                        <li
-                          className={`card-flag ${
-                            local.indices.risco_gestao == 'Normal'
-                              ? 'bg-blue-300'
-                              : 'bg-red-400'
-                          }
-                        `}
-                        >
-                          {local.indices.risco_gestao}
+                        <li className='card-flag'>
+                          {local.identificacao.situacao}
                         </li>
                       </ul>
                       <p className='text-left truncate'>

@@ -3,7 +3,8 @@ export type obrasDataType = {
   identificacao: {
     nome: string;
     situacao: string;
-    municipio: string;
+    municipio_endereco: string;
+    uf: string;
     is_bim: boolean;
   };
   financeiro: {

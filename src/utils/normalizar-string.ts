@@ -1,14 +1,15 @@
-type SituacaoKey = 'concluida' | 'em-execucao' | 'inacabada' | 'cadastrada'
+type ClassificacaoKey = 'excelente' | 'boa' | 'moderada' | 'baixa' | 'critica'
 
-const situacaoMap: Record<string, SituacaoKey> = {
-  'Concluída': 'concluida',
-  'Em execução': 'em-execucao',
-  'Inacabada': 'inacabada',
-  'Cadastrada': 'cadastrada'
+const classificacaoMap: Record<string, ClassificacaoKey> = {
+  'Excelente': 'excelente',
+  'Boa': 'boa',
+  'Moderada': 'moderada',
+  'Baixa': 'baixa',
+  'Crítica': 'critica'
 }
 
-export function normalizarSituacao(situacao: string) {
-  return situacaoMap[situacao] ?? 'cadastrada'
+export function normalizarClassificacao(classificacao: string) {
+  return classificacaoMap[classificacao] ?? ''
 }
 
 export function normalizarNome(texto: string): string {

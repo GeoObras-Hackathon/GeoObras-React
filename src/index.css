@@ -5,7 +5,7 @@
   --color-bg-color: #fff;
   --color-text-color: #1e1e1e;
   --color-bg-fade-color: #f5f5f5;
-  --color-bg-situacao: #0e6bc9;
+  --color-bg-classificacao: #6a737b;
 }
 
 .dark {
@@ -14,16 +14,24 @@
   --color-bg-fade-color: #252525;
 }
 
-.concluida {
-  --color-bg-situacao: #3abc1a;
+.excelente {
+  --color-bg-classificacao: #2c62e0;
 }
 
-.em-execucao {
-  --color-bg-situacao: #dfd61b;
+.boa {
+  --color-bg-classificacao: #3abc1a;
 }
 
-.inacabada {
-  --color-bg-situacao: #ea2a0d;
+.moderada {
+  --color-bg-classificacao: #dfd61b;
+}
+
+.baixa {
+  --color-bg-classificacao: #ea690d;
+}
+
+.critica {
+  --color-bg-classificacao: #d91616;
 }
 
 @layer base {
@@ -49,12 +57,12 @@
     @apply px-1 py-0.5 rounded text-[0.75rem] w-fit;
   }
 
-  .marker-situacao {
+  .marker-classificacao {
     @apply w-4 h-4;
   }
 
   .marker-dot {
-    @apply block w-full h-full rounded-full bg-bg-situacao border-2 border-white shadow-[0_0_0_1px_rgba(0,0,0,0.25)];
+    @apply block w-full h-full rounded-full bg-bg-classificacao border-2 border-white shadow-[0_0_0_1px_rgba(0,0,0,0.25)];
   }
 }
 
