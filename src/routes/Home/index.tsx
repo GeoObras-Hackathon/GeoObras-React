@@ -44,10 +44,10 @@ function Home () {
         {obra != null ? (
           <motion.div
             key='infopage'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 h-full w-fit lg:w-full overflow-y-auto no-scrollbar pointer-events-none **:pointer-events-auto rounded-2xl relative'
           >
             <div className='card flex flex-col h-fit md:max-h-full md:overflow-y-auto no-scrollbar'>
@@ -81,10 +81,10 @@ function Home () {
         ) : (
           <motion.div
             key='homepage'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             className='card flex-1 flex flex-col'
           >
             <div className='flex flex-col gap-2 my-4'>
