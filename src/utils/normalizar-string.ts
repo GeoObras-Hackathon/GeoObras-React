@@ -28,3 +28,18 @@ export function normalizarNome(texto: string): string {
       return palavra.charAt(0).toUpperCase() + palavra.slice(1);
     }).join(" ")
 }
+
+export function normalizarData(data: string) {
+  if (data === 'Informação Pendente') return 'Não informado'
+
+  const [ano, mes, dia] = data.split('-')
+  return `${dia}/${mes}/${ano}`
+}
+
+export function normalizarValor(valor: number) {
+    return new Intl.NumberFormat("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+    useGrouping: true,
+  }).format(valor);
+}

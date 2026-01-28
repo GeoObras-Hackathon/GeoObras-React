@@ -15,7 +15,7 @@ function App () {
 
   return (
     <div className={`h-lvh w-lvw relative flex ${theme}`}>
-      <div className='h-full  flex flex-col pb-3 pl-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto'>
+      <div className='h-full flex flex-col pb-3 pl-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto'>
         <button
           onClick={() => {
             setClean(clean ? false : true)
@@ -45,19 +45,19 @@ function App () {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className='h-full md:h-[calc(100%-5rem)] w-full flex flex-col gap-4 absolute z-10 pointer-events-none p-8 pl-20'
+            className='relative flex flex-col flex-1 p-8 min-h-0 gap-4 z-10 pointer-events-none'
           >
             <Header />
-            {obra && (
-              <button
-                onClick={() => {
-                  resetObra()
-                }}
-                className='button-opt bg-bg-color shadow rounded-full size-10 flex justify-center items-center pointer-events-auto shrink-0'
-              >
-                <IoMdArrowRoundBack />
-              </button>
-            )}
+            <button
+              onClick={() => {
+                resetObra()
+              }}
+              className={`button-opt bg-bg-color shadow rounded-full size-10 flex justify-center items-center pointer-events-auto shrink-0 ${
+                obra ? 'visible' : 'invisible pointer-events-none'
+              }`}
+            >
+              <IoMdArrowRoundBack />
+            </button>
             <Outlet />
           </motion.div>
         )}

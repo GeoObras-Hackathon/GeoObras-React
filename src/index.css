@@ -6,6 +6,7 @@
   --color-text-color: #1e1e1e;
   --color-bg-fade-color: #f5f5f5;
   --color-bg-classificacao: #6a737b;
+  --font-size-xs: 0.75rem;
 }
 
 .dark {
@@ -38,23 +39,19 @@
   html {
     @apply text-[75%] sm:text-[100%];
   }
-
-  body {
-    @apply overflow-hidden;
-  }
 }
 
 @layer components {
   .card {
-    @apply bg-bg-color text-text-color rounded-2xl p-6 h-full min-w-60 w-full lg:w-1/2 max-w-90 shadow-md;
+    @apply flex flex-col bg-bg-color text-text-color rounded-2xl p-6 w-full max-w-90 flex-1 overflow-visible lg:overflow-y-auto min-h-0 shadow-md;
   }
 
   .card-container {
-    @apply h-1/2 md:h-full w-full **:pointer-events-auto mt-auto;
+    @apply flex flex-col lg:flex-row h-1/2 md:h-full overflow-y-auto lg:overflow-visible min-h-0 gap-6 **:pointer-events-auto w-full;
   }
 
   .card-flag {
-    @apply px-1 py-0.5 rounded text-[0.75rem] w-fit;
+    @apply px-1 py-0.5 rounded text-xs w-fit;
   }
 
   .marker-classificacao {

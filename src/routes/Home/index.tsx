@@ -1,45 +1,30 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import obrasDataJSON from '../../data/obras-rj.json'
 import type { obrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import {
   normalizarNome,
-  normalizarClassificacao
+  normalizarClassificacao,
+  normalizarData,
+  normalizarValor
 } from '../../utils/normalizar-string'
 import { CgLoadbarSound } from 'react-icons/cg'
+import { PiMapPinFill } from 'react-icons/pi'
+import { TbContract } from 'react-icons/tb'
 
 function Home () {
   const { obra, setObra } = useMapStore()
-  const [ampliado, setAmpliado] = useState(false)
-  const navRef = useRef<HTMLDivElement | null>(null)
   const obrasData: obrasDataType[] = obrasDataJSON
+  const [expanded, setExpanded] = useState(false)
 
-  let lastScrollTop = 0
-
-  const handleScroll = () => {
-    const el = navRef.current
-    if (!el) return
-
-    const currentScroll = el.scrollTop
-
-    if (currentScroll > lastScrollTop && currentScroll > 10) {
-      setAmpliado(true)
-    }
-
-    if (currentScroll < lastScrollTop && currentScroll <= 0) {
-      setAmpliado(false)
-    }
-
-    lastScrollTop = currentScroll
+  function onNavScroll (e: React.UIEvent<HTMLElement>) {
+    const el = e.currentTarget
+    setExpanded(el.scrollTop > 0)
   }
 
   return (
-    <main
-      className={`card-container transition-[height] duration-300 ease-in-out ${
-        ampliado ? 'h-3/4' : 'h-1/2'
-      } md:min-h-full`}
-    >
+    <main className='flex items-end flex-1 min-h-0'>
       <AnimatePresence mode='wait'>
         {obra != null ? (
           <motion.div
@@ -48,34 +33,117 @@ function Home () {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className='flex flex-col lg:flex-row lg:items-center justify-between gap-8 h-full w-fit lg:w-full overflow-y-auto no-scrollbar pointer-events-none **:pointer-events-auto rounded-2xl relative'
+            className='card-container no-scrollbar lg:justify-between lg:items-center'
           >
-            <div className='card flex flex-col h-fit md:max-h-full md:overflow-y-auto no-scrollbar'>
-              <h2 className='text-2xl font-bold'>
-                {normalizarNome(obra.identificacao.nome)}
-              </h2>
-              <p>Situação da obra: {obra.identificacao.situacao}</p>
-              <p>Endereço: {obra.identificacao.municipio_endereco}</p>
+            <div className='card no-scrollbar min-h-fit md:h-fit md:max-h-full lg:min-h-0 gap-6'>
+              <div>
+                <h2 className='text-2xl font-bold'>
+                  {normalizarNome(obra.identificacao.nome)}
+                </h2>
+                <p className='text-xs mt-2'>
+                  Situação da obra: {obra.identificacao.situacao}
+                </p>
+              </div>
 
-              <p>Inicio da obra: {obra.cronograma.data_inicio}</p>
-              <p>Conclusão prevista: {obra.cronograma.data_fim_prevista}</p>
-              <p>Conclusão real: {obra.cronograma.data_fim_real}</p>
-              <p>Percentual de construção: {obra.cronograma.percentual_fisico}</p>
+              <div className='flex gap-2 p-2 rounded bg-bg-fade-color'>
+                <PiMapPinFill className='mt-1' />
+                <p>{normalizarNome(obra.identificacao.municipio_endereco)}</p>
+              </div>
 
-              <p>Empregos gerados: {obra.social.empregos_gerados}</p>
-              <p>População beneficiada: {obra.social.populacao_beneficiada}</p>
+              <div className='flex justify-between items-center text-center'>
+                <div>
+                  <p className='text-xs'>Inicio da obra</p>
+                  <p>{normalizarData(obra.cronograma.data_inicio)}</p>
+                </div>
+                <div>
+                  <p className='text-xs'>Conclusão prevista</p>
+                  <p>{normalizarData(obra.cronograma.data_fim_prevista)}</p>
+                </div>
+                <div>
+                  <p className='text-xs'>Conclusão real</p>
+                  <p>{normalizarData(obra.cronograma.data_fim_real)}</p>
+                </div>
+              </div>
+
+              <div>
+                <div className='flex justify-between'>
+                  <p>Percentual de construção:</p>
+                  <p>{obra.cronograma.percentual_fisico}%</p>
+                </div>
+                <div className='w-full mt-2 h-2 rounded-full bg-gray-300 overflow-hidden'>
+                  <div
+                    className={`h-full bg-linear-90 from-blue-300 via-blue-400 to-blue-500 w-[${`${obra.cronograma.percentual_fisico}%`}]`}
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div className='flex justify-between'>
+                  <p>Empregos gerados:</p>
+                  <p>{obra.social.empregos_gerados}</p>
+                </div>
+                <div className='flex justify-between'>
+                  <p>População beneficiada:</p>
+                  <p>{obra.social.populacao_beneficiada}</p>
+                </div>
+              </div>
             </div>
-            <div className='card flex flex-col h-fit md:max-h-full'>
-              <p>Valor total contratado: {obra.financeiro.valor_total_contratado}</p>
-              <p>Valor pago acumulado: {obra.financeiro.valor_pago_acumulado}</p>
-              <p>Valor previsto original: {obra.financeiro.valor_previsto_original}</p>
-              <p>Percentual de desembolso: {obra.financeiro.percentual_desembolso}</p>
-              <p>Gap financeiro de construção: {obra.financeiro.gap_financeiro_fisico}</p>
-              <p>Situação de contrato: {obra.financeiro.tem_contrato}</p>
 
-              <p>Indice de eficiência: {obra.indices.eficiencia_cronograma}</p>
-              <p>Classificação: {obra.indices.classificacao}</p>
-              <p>Risco de gestão: {obra.indices.risco_gestao}</p>
+            <div className='card no-scrollbar min-h-fit md:h-fit md:max-h-full lg:min-h-0 gap-6'>
+              <div className='flex gap-2 justify-center bg-blue-300 dark:bg-blue-500 p-2 rounded'>
+                <TbContract />
+                <p className='text-xs'>
+                  {obra.financeiro.tem_contrato ? 'Está' : 'Não está'} sob
+                  contrato
+                </p>
+              </div>
+
+              <div className='flex gap-2 p-2 rounded bg-bg-fade-color'>
+                <p>Classificação:</p>
+                <p
+                  className={`card-flag bg-bg-classificacao flex items-center text-white text-xl px-4 ${normalizarClassificacao(
+                    obra.indices.classificacao
+                  )}`}
+                >
+                  {obra.indices.classificacao}
+                </p>
+              </div>
+              <div className='flex flex-col gap-2'>
+                <div className='flex justify-between'>
+                  <p>Indice de eficiência:</p>
+                  <p>{obra.indices.eficiencia_cronograma}</p>
+                </div>
+                <div className='flex justify-between'>
+                  <p>Risco de gestão:</p>
+                  <p>{obra.indices.risco_gestao}</p>
+                </div>
+              </div>
+
+              <div className='flex justify-between gap-2'>
+                <div className='text-center'>
+                  <p className='text-xs'>Total contratado:</p>
+                  <p>R$ {normalizarValor(obra.financeiro.valor_total_contratado)}</p>
+                </div>
+                <div className='text-center'>
+                  <p className='text-xs'>Pago (acumulado):</p>
+                  <p>R$ {normalizarValor(obra.financeiro.valor_pago_acumulado)}</p>
+                </div>
+                <div className='text-center'>
+                  <p className='text-xs'>Previsto original:</p>
+                  <p>R$ {normalizarValor(obra.financeiro.valor_previsto_original)}</p>
+                </div>
+              </div>
+
+              <div>
+                <div className='flex justify-between mb-2'>
+                  <p>Percentual de desembolso:</p>
+                  <p>{obra.financeiro.percentual_desembolso}%</p>
+                </div>
+                <div className='flex justify-between'>
+                  <p>Gap financeiro de construção:</p>
+                  <p>{obra.financeiro.gap_financeiro_fisico}</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         ) : (
@@ -85,50 +153,53 @@ function Home () {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className='card flex-1 flex flex-col'
+            className={`card-container no-scrollbar transition-[height] ease-in-out duration-300 ${
+              expanded ? 'h-full' : 'h-1/2'
+            } md:h-full`}
           >
-            <div className='flex flex-col gap-2 my-4'>
-              <h1 className='text-2xl font-bold'>Página Inicial</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur; adipisicing elit. Fuga;
-                soluta.
-              </p>
+            <div className='card'>
+              <div className='flex flex-col gap-2 my-4 shrink-0'>
+                <h1 className='text-2xl font-bold'>Página Inicial</h1>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Dolor totam ipsam veritatis, repellendus expedita quam?
+                </p>
+              </div>
+              <nav
+                onScroll={onNavScroll}
+                className='mt-4 p-4 flex flex-col overflow-y-auto min-h-0 no-scrollbar flex-1'
+              >
+                <ul className='flex flex-col gap-4'>
+                  {obrasData.map((local, index) => (
+                    <li key={index}>
+                      <button
+                        onClick={() => {
+                          setObra(local)
+                        }}
+                        className='flex flex-col gap-2 w-full px-4 py-2 shadow rounded-lg button-opt bg-bg-color'
+                      >
+                        <ul className='flex w-full overflow no-scrollbar-x-hidden gap-2'>
+                          <li
+                            className={`card-flag bg-bg-classificacao flex items-center text-white ${normalizarClassificacao(
+                              local.indices.classificacao
+                            )}`}
+                          >
+                            <CgLoadbarSound className='text-lg' />
+                            {local.indices.classificacao}
+                          </li>
+                          <li className='card-flag'>
+                            {local.identificacao.situacao}
+                          </li>
+                        </ul>
+                        <p className='text-left truncate'>
+                          {normalizarNome(local.identificacao.nome)}
+                        </p>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
-            <nav
-              ref={navRef}
-              onScroll={handleScroll}
-              className='flex-1 overflow-y-auto no-scrollbar p-4 pr-6 bg-bg-fade-color'
-            >
-              <ul className='flex flex-col gap-4'>
-                {obrasData.map((local, index) => (
-                  <li key={index}>
-                    <button
-                      onClick={() => {
-                        setObra(local)
-                      }}
-                      className='flex flex-col gap-2 w-full px-4 py-2 shadow rounded-lg button-opt bg-bg-color'
-                    >
-                      <ul className='flex w-full overflow no-scrollbar-x-hidden gap-2'>
-                        <li
-                          className={`card-flag bg-bg-classificacao flex items-center text-white ${normalizarClassificacao(
-                            local.indices.classificacao
-                          )}`}
-                        >
-                          <CgLoadbarSound className='text-lg'/>
-                          {local.indices.classificacao}
-                        </li>
-                        <li className='card-flag'>
-                          {local.identificacao.situacao}
-                        </li>
-                      </ul>
-                      <p className='text-left truncate'>
-                        {normalizarNome(local.identificacao.nome)}
-                      </p>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
           </motion.div>
         )}
       </AnimatePresence>
