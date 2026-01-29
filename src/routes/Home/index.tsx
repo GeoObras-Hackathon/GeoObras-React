@@ -1,7 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'
-import obrasDataJSON from '../../data/obras-rj.json'
-import type { ObrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import {
   normalizarNome,
@@ -12,10 +10,11 @@ import {
 import { CgLoadbarSound } from 'react-icons/cg'
 import { PiMapPinFill } from 'react-icons/pi'
 import { TbContract } from 'react-icons/tb'
+import { useObrasStore } from '../../store/use-obras-store'
 
 function Home () {
   const { obra, setObra } = useMapStore()
-  const obrasData: ObrasDataType[] = obrasDataJSON
+  const { obras } = useObrasStore()
   const [expanded, setExpanded] = useState(false)
 
   function onNavScroll (e: React.UIEvent<HTMLElement>) {
@@ -170,7 +169,7 @@ function Home () {
                 className='mt-4 p-4 flex flex-col overflow-y-auto min-h-0 no-scrollbar flex-1 bg-bg-fade-color'
               >
                 <ul className='flex flex-col gap-4'>
-                  {obrasData.map((local, index) => (
+                  {obras?.map((local, index) => (
                     <li key={index}>
                       <button
                         onClick={() => {

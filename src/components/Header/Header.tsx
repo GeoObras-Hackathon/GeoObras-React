@@ -1,5 +1,5 @@
 import { useThemeStore } from '../../store/use-theme-store'
-import logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/Logo.png'
 import { FaFilter } from 'react-icons/fa6'
 import { IoMdMoon, IoMdSunny } from 'react-icons/io'
 import { useActionState, useEffect, useState } from 'react'
@@ -68,7 +68,7 @@ function Header () {
   return (
     <header className='w-full py-2 px-4 rounded-full bg-bg-color text-text-color flex justify-between pointer-events-auto shadow-md relative'>
       <div className='flex items-center gap-2'>
-        <img src={logo} alt='Logo GeoObras' className='size-12' />
+        <img src={Logo} alt='Logo GeoObras' className='size-12' />
         <p className='text-3xl hidden md:block font-black'>Geo Obras</p>
       </div>
       <div className='flex gap-4 pr-2 items-center'>

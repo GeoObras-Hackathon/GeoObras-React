@@ -3,15 +3,12 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import { useThemeStore } from '../../store/use-theme-store'
-import obrasDataJSON from '../../data/obras-rj.json'
-import type { ObrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
 import { normalizarClassificacao } from '../../utils/normalizar-string'
 import L, { DivIcon } from 'leaflet'
 import rjGeoJSON from '../../data/geojs-33-mun.json'
-
-const obrasData: ObrasDataType[] = obrasDataJSON
+import { useObrasStore } from '../../store/use-obras-store'
 
 function MapRegister () {
   const map = useMap()
@@ -36,11 +33,14 @@ function CustomIcon (classificacao: string) {
 }
 
 function Markers () {
+  const { obras } = useObrasStore()
   const { setObra } = useMapStore()
+  
+  if (!obras) return null
 
   return (
     <>
-      {obrasData.map((obra, index) => (
+      {obras.map((obra, index) => (
         <Marker
           key={index}
           position={[
