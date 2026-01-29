@@ -2,12 +2,13 @@ import { useThemeStore } from '../../store/use-theme-store'
 import logo from '../../assets/images/logo.png'
 import { FaFilter } from 'react-icons/fa6'
 import { IoMdMoon, IoMdSunny } from 'react-icons/io'
-import { useActionState, useState } from 'react'
+import { useActionState, useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { useMapStore } from '../../store/use-map-store'
 import type { ObrasDataType } from '../../types/obras-data-type'
 import { GrClose } from 'react-icons/gr'
 import { normalizarFiltro, normalizarNome } from '../../utils/normalizar-string'
+import { CgSpinner } from 'react-icons/cg'
 const API_BASE = import.meta.env.VITE_API_BASE
 
 function Header () {
@@ -20,6 +21,8 @@ function Header () {
   const [obrasFiltradas, setObrasFiltradas] = useState<ObrasDataType[] | null>(
     null
   )
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [submitCount, setSubmitCount] = useState(0)
 
   const filtros = {
     situacao: ['Cadastrada', 'Concluída', 'Inacabada'],
@@ -34,15 +37,31 @@ function Header () {
     const filtro = formData.get('filtro') as FiltrosType
     const valor = formData.get('valor') as string | null
 
-    const response = await fetch(
-      `${API_BASE + (valor != null ? `?${filtro}=${valor}` : `/${filtro}`)}`
-    )
+    try {
+      const response = await fetch(
+        `${API_BASE + (valor != null ? `?${filtro}=${valor}` : `/${filtro}`)}`
+      )
 
-    if (!response.ok) return { error: 'Erro ao fazer filtro' }
+      if (!response.ok) return { error: 'Erro ao fazer filtro' }
 
-    const responseData: ObrasDataType[] = await response.json()
-    setObrasFiltradas(responseData)
+      const responseData: ObrasDataType[] = await response.json()
+      setObrasFiltradas(responseData)
+    } catch (error: unknown) {
+      return { error: 'Erro inesperado, tente novamente mais tarde.' }
+    }
   }
+
+  useEffect(() => {
+    if (!state?.error) return
+
+    setErrorMessage(state.error)
+
+    const timeout = setTimeout(() => {
+      setErrorMessage(null)
+    }, 5000)
+
+    return () => clearTimeout(timeout)
+  }, [submitCount, state?.error])
 
   const config = filtros[filtro as FiltrosType]
 
@@ -96,13 +115,16 @@ function Header () {
           Filtre quais obras quer ver
         </p>
         <form
-          action={action}
+          action={async formData => {
+            setSubmitCount(c => c + 1)
+            return action(formData)
+          }}
+          key={submitCount}
           className='flex justify-between h-full'
         >
           <fieldset className='flex flex-col gap-4'>
             <select
               name='filtro'
-              id='idFiltro'
               value={filtro}
               onChange={e => {
                 setFiltro(e.target.value as FiltrosType)
@@ -154,13 +176,12 @@ function Header () {
 
           <button
             disabled={isPending}
-            className='flex flex-col items-center justify-center button-opt bg-lime-400 p-2 size-16 rounded-lg'
+            className='flex flex-col items-center justify-center button-opt bg-lime-400 p-2 size-14 rounded-full text-lg'
           >
-            <FaSearch className='text-lg' />
-            <p>{isPending ? 'Buscando...' : 'Buscar'}</p>
+            {
+            isPending ? <CgSpinner className='text-2xl animate-spin'/> : <FaSearch  />
+            }
           </button>
-
-          {state?.error && <p className='text-red-500'>{state.error}</p>}
         </form>
         {obrasFiltradas && (
           <ul className='h-40 gap-4 mt-4 p-4 flex flex-col overflow-y-auto no-scrollbar bg-bg-fade-color'>
@@ -177,6 +198,15 @@ function Header () {
           </ul>
         )}
       </div>
+      <p
+        className={`fixed top-4 left-1/2 -translate-x-1/2 bg-red-500 shadow-md py-2 px-4 rounded-full transition-all duration-300 ease-in-out ${
+          errorMessage
+            ? 'translate-y-0  opacity-100 scale-y-100'
+            : '-translate-y-full opacity-0 scale-y-0'
+        }`}
+      >
+        {errorMessage}
+      </p>
     </header>
   )
 }
