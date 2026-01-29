@@ -4,14 +4,14 @@ import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import { useThemeStore } from '../../store/use-theme-store'
 import obrasDataJSON from '../../data/obras-rj.json'
-import type { obrasDataType } from '../../types/obras-data-type'
+import type { ObrasDataType } from '../../types/obras-data-type'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
 import { normalizarClassificacao } from '../../utils/normalizar-string'
 import L, { DivIcon } from 'leaflet'
 import rjGeoJSON from '../../data/geojs-33-mun.json'
 
-const obrasData: obrasDataType[] = obrasDataJSON
+const obrasData: ObrasDataType[] = obrasDataJSON
 
 function MapRegister () {
   const map = useMap()

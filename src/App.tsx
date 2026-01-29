@@ -1,17 +1,23 @@
 import { Outlet } from 'react-router-dom'
 import Header from './components/Header/Header'
 import MapView from './components/MapView/MapView'
-import { useThemeStore } from './store/use-theme-store'
-import { IoMdArrowRoundBack, IoMdHelp } from 'react-icons/io'
-import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { MdZoomInMap, MdZoomOutMap } from 'react-icons/md'
+import { useThemeStore } from './store/use-theme-store'
 import { useMapStore } from './store/use-map-store'
+import { useState } from 'react'
+import { IoMdArrowRoundBack } from 'react-icons/io'
+import { MdZoomInMap, MdZoomOutMap } from 'react-icons/md'
+import { FaInfo } from 'react-icons/fa6'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import profilePic1 from './assets/images/FelipeFerrete.jpeg'
+import profilePic2 from './assets/images/GustavoBosak.jpeg'
+import { GrClose } from 'react-icons/gr'
 
 function App () {
   const { theme } = useThemeStore()
   const { obra, resetObra } = useMapStore()
   const [clean, setClean] = useState(false)
+  const [openInfo, setOpenInfo] = useState(false)
 
   return (
     <div className={`h-lvh w-lvw relative flex ${theme}`}>
@@ -19,8 +25,9 @@ function App () {
         <button
           onClick={() => {
             setClean(clean ? false : true)
+            setOpenInfo(false)
           }}
-          className='button-opt bg-bg-fade-color shadow rounded-full size-10 flex justify-center items-center relative text-lg'
+          className='button-opt bg-bg-fade-color side-button relative text-lg'
         >
           <MdZoomOutMap
             className={`absolute ${
@@ -33,12 +40,27 @@ function App () {
             }`}
           />
         </button>
-        <button className='button-opt bg-bg-fade-color shadow rounded-full size-10 flex justify-center items-center'>
-          <IoMdHelp />
+        <button
+          onClick={() => {
+            setOpenInfo(openInfo ? false : true)
+            setClean(openInfo ? false : true)
+          }}
+          className='button-opt bg-bg-fade-color side-button'
+        >
+          <FaInfo
+            className={`absolute ${
+              !openInfo ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+            }`}
+          />
+          <GrClose
+            className={`absolute ${
+              openInfo ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+            }`}
+          />
         </button>
       </div>
       <AnimatePresence>
-        {!clean && (
+        {!clean && !openInfo ? (
           <motion.div
             key='ui-layer'
             initial={{ opacity: 0, y: 16 }}
@@ -52,7 +74,7 @@ function App () {
               onClick={() => {
                 resetObra()
               }}
-              className={`button-opt bg-bg-color shadow rounded-full size-10 flex justify-center items-center pointer-events-auto shrink-0 ${
+              className={`button-opt bg-bg-color side-button pointer-events-auto shrink-0 ${
                 obra ? 'visible' : 'invisible pointer-events-none'
               }`}
             >
@@ -60,6 +82,90 @@ function App () {
             </button>
             <Outlet />
           </motion.div>
+        ) : (
+          openInfo ? (
+            <motion.div
+              key='info-popup'
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 16 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className='flex flex-col gap-6 fixed z-10 left-20 bottom-8 p-6 w-full max-w-90 bg-bg-color text-text-color rounded-2xl'
+            >
+              <div>
+                <h2 className='text-xl font-bold mb-2'>Sobre a Geo Obras</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum, deleniti.
+                </p>
+              </div>
+
+              <div>
+                <h3 className='text-xl font-bold mb-2'>Quem somos</h3>
+                <div className='flex flex-col gap-6'>
+                  <div className='flex items-center gap-4'>
+                    <img
+                      src={profilePic1}
+                      alt='Foto de desenvolvedor Felipe Ferrete'
+                      className='w-20 rounded-full'
+                    />
+                    <div>
+                      <p className='text-lg font-medium'>Felipe Ferrete</p>
+                      <div>
+                        <a
+                          href='https://github.com/felipeferrete'
+                          target='_blank'
+                          className='flex gap-2 items-center my-2'
+                        >
+                          <BsGithub />
+                          <p className='text-xs'>/felipeferrete</p>
+                        </a>
+                        <a
+                          href='https://linkedin.com/in/felipe-ferrete'
+                          target='_blank'
+                          className='flex gap-2 items-center'
+                        >
+                          <BsLinkedin />
+                          <p className='text-xs'>/in/felipe-ferrete</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='flex items-center gap-4'>
+                    <img
+                      src={profilePic2}
+                      alt='Foto de desenvolvedor Gustavo Bosak'
+                      className='w-20 rounded-full'
+                    />
+                    <div>
+                      <p className='text-lg font-medium'>Gustavo Bosak</p>
+                      <div>
+                        <a
+                          href='https://github.com/gustavo-bosak'
+                          target='_blank'
+                          className='flex gap-2 items-center my-2'
+                        >
+                          <BsGithub />
+                          <p className='text-xs'>/gustavo-bosak</p>
+                        </a>
+                        <a
+                          href='https://linkedin.com/in/gustavo-bosak-santos'
+                          target='_blank'
+                          className='flex gap-2 items-center'
+                        >
+                          <BsLinkedin />
+                          <p className='text-xs'>/in/gustavo-bosak-santos</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className='text-xs text-center opacity-50'>
+                &copy; GeoObras 2026. Direitos reservados.
+              </p>
+            </motion.div>
+          ) : ''
         )}
       </AnimatePresence>
       <MapView />

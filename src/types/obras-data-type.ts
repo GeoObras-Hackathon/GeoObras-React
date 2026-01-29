@@ -1,4 +1,4 @@
-export type obrasDataType = {
+export type ObrasDataType = {
   idUnico: string;
   identificacao: {
     nome: string;

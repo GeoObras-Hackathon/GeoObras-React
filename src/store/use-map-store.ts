@@ -1,12 +1,12 @@
 import type { Map } from "leaflet"
 import { create } from "zustand"
-import type { obrasDataType } from "../types/obras-data-type"
+import type { ObrasDataType } from "../types/obras-data-type"
 
 type MapStore = {
   map: Map | null
-  obra: obrasDataType | null
+  obra: ObrasDataType | null
   setMap: (map: Map) => void
-  setObra: (obra: obrasDataType) => void
+  setObra: (obra: ObrasDataType) => void
   resetObra: () => void
 }
 

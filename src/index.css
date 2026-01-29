@@ -61,6 +61,10 @@
   .marker-dot {
     @apply block w-full h-full rounded-full bg-bg-classificacao border-2 border-white shadow-[0_0_0_1px_rgba(0,0,0,0.25)];
   }
+
+  .side-button {
+    @apply shadow rounded-full size-10 flex justify-center items-center;
+  }
 }
 
 @layer utilities {
