@@ -1,5 +1,5 @@
 import { useThemeStore } from '../../store/use-theme-store'
-import Logo from '../../assets/images/Logo.png'
+import Logo from '../../assets/images/logo.png'
 import { FaFilter } from 'react-icons/fa6'
 import { IoMdMoon, IoMdSunny } from 'react-icons/io'
 import { useActionState, useEffect, useState } from 'react'

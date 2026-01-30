@@ -13,7 +13,7 @@ import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import profilePic1 from './assets/images/FelipeFerrete.jpeg'
 import profilePic2 from './assets/images/GustavoBosak.jpeg'
 import { GrClose } from 'react-icons/gr'
-import Logo from './assets/images/Logo.png'
+import Logo from './assets/images/logo.png'
 import ErrorImage from './assets/images/error-image.png'
 
 function App () {
