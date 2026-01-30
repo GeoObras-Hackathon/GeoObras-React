@@ -160,8 +160,7 @@ function Home () {
               <div className='flex flex-col gap-2 my-4 shrink-0'>
                 <h1 className='text-2xl font-bold'>Página Inicial</h1>
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolor totam ipsam veritatis, repellendus expedita quam?
+                  Boas vindas ao Geo Obras! Acesse um item da lista, um marcador no mapa ou filtre as obras que deseja ver com mais atenção e tenha acesso a uma ficha com os dados mais relevantes para análise.
                 </p>
               </div>
               <nav

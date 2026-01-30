@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
-import { useThemeStore } from '../../store/use-theme-store'
 import MapView from '../../components/MapView/MapView'
 import ErrorImage from '../../assets/images/error-image.png'
 
 function ErrorPage () {
-  const { theme } = useThemeStore()
-
   return (
-    <div className={`h-lvh w-lvw relative flex ${theme}`}>
+    <div className='h-lvh w-lvw relative flex'>
       <div className='card-container z-10 h-full flex justify-center items-center'>
         <div className='card w-full md:w-100 mx-8 h-fit flex flex-col items-center'>
           <img

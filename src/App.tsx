@@ -27,16 +27,21 @@ function App () {
     fetchObras()
   }, [fetchObras])
 
+  useEffect(() => {
+    document.body.classList.remove('light', 'dark')
+    document.body.classList.add(theme)
+  }, [theme])
+
   return (
     <AnimatePresence>
       {loading ? (
         <motion.div
           key='loading-screen'
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 16 }}
-          transition={{ duration: 0.25, ease: 'easeOut' }}
-          className={`message-screen ${theme}`}
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className='message-screen'
         >
           <div className='flex gap-2 items-center'>
             <img src={Logo} alt='Logo GeoObras' className='h-20' />
@@ -45,22 +50,31 @@ function App () {
           <p className='text-center text-lg my-2'>Iniciando o programa...</p>
         </motion.div>
       ) : error ? (
-        <div className={`message-screen ${theme}`}>
+        <motion.div
+          key='error-screen'
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className='message-screen'
+        >
           <img
             src={ErrorImage}
             alt='Imagem para indicar Página Não Econtrada'
             className='h-40 brightness-75 dark:brightness-100'
           />
           <div className='flex flex-col gap-4 max-w-90 text-center pb-20'>
-            <h1 className='text-4xl font-bold'>Não foi possível acessar servidor</h1>
+            <h1 className='text-4xl font-bold'>
+              Não foi possível acessar servidor
+            </h1>
             <p>
               Parece que estamos com problemas em iniciar o programa, tente
               novamente mais tarde.
             </p>
           </div>
-        </div>
+        </motion.div>
       ) : (
-        <div className={`h-lvh w-lvw relative flex ${theme}`}>
+        <div className='h-lvh w-lvw relative flex'>
           <div className='h-full flex flex-col pb-3 pl-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto'>
             <button
               onClick={() => {
@@ -134,8 +148,20 @@ function App () {
                 <div>
                   <h2 className='text-xl font-bold mb-2'>Sobre a Geo Obras</h2>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum, deleniti.
+                    A Geo Obras é uma plataforma que exibe, processa e organiza
+                    os dados de obras no estado do Rio de Janeiro, com objetivo
+                    de tornar a análise acerca delas mais assertiva.
+                    <p className='mt-2'>
+                      O projeto é parte de um Hackaton promovido pela{' '}
+                      <a
+                        href='https://www.duopen.com.br/'
+                        target='_blank'
+                        className='font-semibold text-blue-800'
+                      >
+                        Duopen
+                      </a>
+                      .
+                    </p>
                   </p>
                 </div>
 

@@ -120,9 +120,9 @@ function Header () {
             return action(formData)
           }}
           key={submitCount}
-          className='flex justify-between h-full'
+          className='flex h-full gap-6'
         >
-          <fieldset className='flex flex-col gap-4'>
+          <fieldset className='flex flex-col gap-4 w-full'>
             <select
               name='filtro'
               value={filtro}
@@ -131,6 +131,7 @@ function Header () {
                 setValor('')
               }}
               required
+              className='entry'
             >
               <option value='' disabled>
                 Selecione um filtro
@@ -145,9 +146,10 @@ function Header () {
             {Array.isArray(config) && (
               <select
                 name='valor'
-                required
                 value={valor}
                 onChange={e => setValor(e.target.value)}
+                required
+                className='entry'
               >
                 <option value='' disabled>
                   Selecione um filtro
@@ -170,13 +172,14 @@ function Header () {
                 min='0'
                 step='any'
                 required
+                className='entry'
               />
             )}
           </fieldset>
 
           <button
             disabled={isPending}
-            className='flex flex-col items-center justify-center button-opt bg-lime-400 p-2 size-14 rounded-full text-lg'
+            className='flex flex-col items-center justify-center button-opt bg-lime-400 p-2 size-14 rounded-full text-lg shrink-0'
           >
             {
             isPending ? <CgSpinner className='text-2xl animate-spin'/> : <FaSearch  />
