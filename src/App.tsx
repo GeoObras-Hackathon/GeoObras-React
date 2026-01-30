@@ -33,31 +33,18 @@ function App () {
   }, [theme])
 
   return (
-    <AnimatePresence>
-      {loading ? (
-        <motion.div
-          key='loading-screen'
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className='message-screen'
-        >
+    <div className='h-lvh w-lvw relative flex'>
+      {loading && !error && (
+        <div className='message-screen'>
           <div className='flex gap-2 items-center'>
             <img src={Logo} alt='Logo GeoObras' className='h-20' />
             <p className='text-5xl font-black'>Geo Obras</p>
           </div>
           <p className='text-center text-lg my-2'>Iniciando o programa...</p>
-        </motion.div>
-      ) : error ? (
-        <motion.div
-          key='error-screen'
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className='message-screen'
-        >
+        </div>
+      )}
+      {error && !loading && (
+        <div className='message-screen'>
           <img
             src={ErrorImage}
             alt='Imagem para indicar Página Não Econtrada'
@@ -72,9 +59,10 @@ function App () {
               novamente mais tarde.
             </p>
           </div>
-        </motion.div>
-      ) : (
-        <div className='h-lvh w-lvw relative flex'>
+        </div>
+      )}
+      {!loading && !error && (
+        <div className='size-full relative flex'>
           <div className='h-full flex flex-col pb-3 pl-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto'>
             <button
               onClick={() => {
@@ -237,7 +225,7 @@ function App () {
           <MapView />
         </div>
       )}
-    </AnimatePresence>
+    </div>
   )
 }
 
