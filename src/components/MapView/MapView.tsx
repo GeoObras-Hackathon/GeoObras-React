@@ -1,14 +1,13 @@
-import { MapContainer, Marker, TileLayer, useMap, GeoJSON as DivGeoJSON } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, GeoJSON as DivGeoJSON } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import { useThemeStore } from '../../store/use-theme-store'
 import { useMapStore } from '../../store/use-map-store'
 import { useEffect } from 'react'
-import { normalizarClassificacao } from '../../utils/normalizar-string'
-import L, { DivIcon } from 'leaflet'
+import L from 'leaflet'
 import rjGeoJSON from '../../data/geojs-33-mun.json'
-import { useObrasStore } from '../../store/use-obras-store'
+import MarkersCluster from '../MarkersCluster/MarkersCluster'
 
 function MapRegister () {
   const map = useMap()
@@ -19,42 +18,6 @@ function MapRegister () {
   }, [map, setMap])
 
   return null
-}
-
-function CustomIcon (classificacao: string) {
-  const classificacaoClass = normalizarClassificacao(classificacao)
-
-  return new DivIcon({
-    className: `marker-classificacao ${classificacaoClass}`,
-    html: `<span class="marker-dot"></span>`,
-    iconSize: [16, 16],
-    iconAnchor: [8, 8]
-  })
-}
-
-function Markers () {
-  const { obras } = useObrasStore()
-  const { setObra } = useMapStore()
-  
-  if (!obras) return null
-
-  return (
-    <>
-      {obras.map((obra, index) => (
-        <Marker
-          key={index}
-          position={[
-            obra.geolocalizacao.latitude,
-            obra.geolocalizacao.longitude
-          ]}
-          icon={CustomIcon(obra.indices.classificacao)}
-          eventHandlers={{
-            click: () => setObra(obra)
-          }}
-        />
-      ))}
-    </>
-  )
 }
 
 function MunicipiosRJLayer () {
@@ -105,7 +68,7 @@ function MapView () {
       />
       <MunicipiosRJLayer />
 
-      <Markers />
+      <MarkersCluster />
       <MapRegister />
     </MapContainer>
   )

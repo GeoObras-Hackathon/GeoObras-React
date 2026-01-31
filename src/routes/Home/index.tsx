@@ -71,7 +71,8 @@ function Home () {
                 </div>
                 <div className='w-full mt-2 h-2 rounded-full bg-gray-300 overflow-hidden'>
                   <div
-                    className={`h-full bg-linear-90 from-blue-300 via-blue-400 to-blue-500 w-[${`${obra.cronograma.percentual_fisico}%`}]`}
+                    className='h-full bg-linear-90 from-blue-300 via-blue-400 to-blue-500'
+                    style={{ width: `${obra.cronograma.percentual_fisico}%` }}
                   ></div>
                 </div>
               </div>
@@ -121,15 +122,22 @@ function Home () {
               <div className='flex justify-between gap-2'>
                 <div className='text-center'>
                   <p className='text-xs'>Total contratado:</p>
-                  <p>R$ {normalizarValor(obra.financeiro.valor_total_contratado)}</p>
+                  <p>
+                    R$ {normalizarValor(obra.financeiro.valor_total_contratado)}
+                  </p>
                 </div>
                 <div className='text-center'>
                   <p className='text-xs'>Pago (acumulado):</p>
-                  <p>R$ {normalizarValor(obra.financeiro.valor_pago_acumulado)}</p>
+                  <p>
+                    R$ {normalizarValor(obra.financeiro.valor_pago_acumulado)}
+                  </p>
                 </div>
                 <div className='text-center'>
                   <p className='text-xs'>Previsto original:</p>
-                  <p>R$ {normalizarValor(obra.financeiro.valor_previsto_original)}</p>
+                  <p>
+                    R${' '}
+                    {normalizarValor(obra.financeiro.valor_previsto_original)}
+                  </p>
                 </div>
               </div>
 
@@ -160,7 +168,10 @@ function Home () {
               <div className='flex flex-col gap-2 my-4 shrink-0'>
                 <h1 className='text-2xl font-bold'>Página Inicial</h1>
                 <p>
-                  Boas vindas ao Geo Obras! Acesse um item da lista, um marcador no mapa ou filtre as obras que deseja ver com mais atenção e tenha acesso a uma ficha com os dados mais relevantes para análise.
+                  Boas vindas ao Geo Obras! Acesse um item da lista, um marcador
+                  no mapa ou filtre as obras que deseja ver com mais atenção e
+                  tenha acesso a uma ficha com os dados mais relevantes para
+                  análise.
                 </p>
               </div>
               <nav

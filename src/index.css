@@ -77,6 +77,14 @@
   .entry {
     @apply p-3 bg-bg-fade-color rounded appearance-none cursor-pointer focus:outline-none w-full;
   }
+
+  .cluster-wrapper {
+    @apply bg-transparent;
+  }
+
+  .cluster-marker {
+    @apply bg-blue-500/30 dark:bg-blue-300/30 text-text-color border-2 border-blue-500 dark:border-blue-400 font-bold rounded-full size-10 flex items-center justify-center text-sm
+  }
 }
 
 @layer utilities {
