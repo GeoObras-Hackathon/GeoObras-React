@@ -18,7 +18,7 @@ import ErrorImage from './assets/images/error-image.png'
 
 function App () {
   const { theme } = useThemeStore()
-  const { obra, resetObra } = useMapStore()
+  // const { obra, resetObra } = useMapStore()
   const { fetchObras, loading, error } = useObrasStore()
   const [clean, setClean] = useState(false)
   const [openInfo, setOpenInfo] = useState(false)
@@ -32,37 +32,39 @@ function App () {
     document.body.classList.add(theme)
   }, [theme])
 
-  return (
-    <div className='h-lvh w-lvw relative flex'>
-      {loading && !error && (
-        <div className='message-screen'>
-          <div className='flex gap-2 items-center'>
-            <img src={Logo} alt='Logo GeoObras' className='h-20' />
-            <p className='text-5xl font-black'>Geo Obras</p>
-          </div>
-          <p className='text-center text-lg my-2'>Iniciando o programa...</p>
+  if (error && !loading) {
+    return (
+      <div className='message-screen'>
+        <img
+          src={ErrorImage}
+          alt='Imagem para indicar Página Não Econtrada'
+          className='h-40 brightness-75 dark:brightness-100'
+        />
+        <div className='flex flex-col gap-4 max-w-90 text-center pb-20'>
+          <h1 className='text-4xl font-bold'>
+            Não foi possível acessar servidor
+          </h1>
+          <p>
+            Parece que estamos com problemas em iniciar o programa, tente
+            novamente mais tarde.
+          </p>
         </div>
-      )}
-      {error && !loading && (
-        <div className='message-screen'>
-          <img
-            src={ErrorImage}
-            alt='Imagem para indicar Página Não Econtrada'
-            className='h-40 brightness-75 dark:brightness-100'
-          />
-          <div className='flex flex-col gap-4 max-w-90 text-center pb-20'>
-            <h1 className='text-4xl font-bold'>
-              Não foi possível acessar servidor
-            </h1>
-            <p>
-              Parece que estamos com problemas em iniciar o programa, tente
-              novamente mais tarde.
-            </p>
-          </div>
+      </div>
+    )
+  } else if (loading && !error) {
+    return (
+      <div className='message-screen'>
+        <div className='flex gap-2 items-center'>
+          <img src={Logo} alt='Logo GeoObras' className='h-20' />
+          <p className='text-5xl font-black'>Geo Obras</p>
         </div>
-      )}
-      {!loading && !error && (
-        <div className='size-full relative flex'>
+        <p className='text-center text-lg my-2'>Iniciando o programa...</p>
+      </div>
+    )
+  } else {
+    return (
+      <div className='h-lvh w-lvw relative flex'>
+        {/* <div className='size-full relative flex'>
           <div className='h-full flex flex-col pb-3 pl-3 justify-end gap-4 z-10 pointer-events-none **:pointer-events-auto'>
             <button
               onClick={() => {
@@ -219,14 +221,16 @@ function App () {
                 </p>
               </motion.div>
             ) : (
-              ''
+              <div className='bg-red-500 size-200'>
+                Text
+              </div>
             )}
           </AnimatePresence>
           <MapView />
-        </div>
-      )}
-    </div>
-  )
+        </div> */}
+      </div>
+    )
+  }
 }
 
 export default App
