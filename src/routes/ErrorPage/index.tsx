@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import MapView from '../../components/MapView/MapView'
 import ErrorImage from '../../assets/images/error-image.png'
 
@@ -19,9 +18,9 @@ function ErrorPage () {
               indisponível temporariamente ou ter mudado de rota.
             </p>
           </div>
-          <Link to='/' className='p-4 bg-lime-500 rounded-2xl button-opt'>
+          <button onClick={() => window.location.pathname} className='p-4 bg-lime-500 rounded-2xl button-opt'>
             Voltar para a Página Inicial
-          </Link>
+          </button>
         </div>
       </div>
       <div className='size-full fixed z-0 pointer-events-none grayscale-100 brightness-70'>

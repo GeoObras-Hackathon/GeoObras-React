@@ -1,18 +1,19 @@
-import { Outlet } from 'react-router-dom'
-import Header from './components/Header/Header'
-import MapView from './components/MapView/MapView'
-import { AnimatePresence, motion } from 'motion/react'
+// import Header from './components/Header/Header'
+// import MapView from './components/MapView/MapView'
+// import { AnimatePresence, motion } from 'motion/react'
 import { useThemeStore } from './store/use-theme-store'
-import { useMapStore } from './store/use-map-store'
+// import { useMapStore } from './store/use-map-store'
 import { useObrasStore } from './store/use-obras-store'
-import { useEffect, useState } from 'react'
-import { IoMdArrowRoundBack } from 'react-icons/io'
-import { MdZoomInMap, MdZoomOutMap } from 'react-icons/md'
-import { FaInfo } from 'react-icons/fa6'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import profilePic1 from './assets/images/FelipeFerrete.jpeg'
-import profilePic2 from './assets/images/GustavoBosak.jpeg'
-import { GrClose } from 'react-icons/gr'
+import { useEffect,
+  // useState
+} from 'react'
+// import { IoMdArrowRoundBack } from 'react-icons/io'
+// import { MdZoomInMap, MdZoomOutMap } from 'react-icons/md'
+// import { FaInfo } from 'react-icons/fa6'
+// import { BsGithub, BsLinkedin } from 'react-icons/bs'
+// import profilePic1 from './assets/images/FelipeFerrete.jpeg'
+// import profilePic2 from './assets/images/GustavoBosak.jpeg'
+// import { GrClose } from 'react-icons/gr'
 import Logo from './assets/images/logo.png'
 import ErrorImage from './assets/images/error-image.png'
 
@@ -20,8 +21,8 @@ function App () {
   const { theme } = useThemeStore()
   // const { obra, resetObra } = useMapStore()
   const { fetchObras, loading, error } = useObrasStore()
-  const [clean, setClean] = useState(false)
-  const [openInfo, setOpenInfo] = useState(false)
+  // const [clean, setClean] = useState(false)
+  // const [openInfo, setOpenInfo] = useState(false)
 
   useEffect(() => {
     fetchObras()
